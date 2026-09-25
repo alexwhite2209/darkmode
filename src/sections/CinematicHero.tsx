@@ -4,9 +4,7 @@ import { Fragment, useEffect, useRef, useState, type CSSProperties } from "react
 import type { Chapter } from "@/types";
 import { site } from "@/data/site";
 import { scroll, ranges } from "@/animations/scroll";
-import { VideoScrub, type ScrubState } from "@/animations/video-scrub";
-import { FrameScrub } from "@/animations/frame-scrub";
-import { readScrubKind, type ScrubKind } from "@/lib/scrub-mode";
+import { FrameScrub, type ScrubState } from "@/animations/frame-scrub";
 import { band, clamp, smoothstep } from "@/lib/math";
 import { ambient, loading } from "@/lib/store";
 import { SplitWords } from "@/components/SplitWords";
@@ -14,8 +12,6 @@ import { DiscussButton, LinkButton } from "@/components/Buttons";
 import styles from "./CinematicHero.module.css";
 
 const DURATION = site.video.duration;
-/** approximate byte sizes, used for the progress ring when Content-Length is missing */
-const BYTES = { desktop: 6_000_000, mobile: 6_000_000 };
 /** the O at the final frame, as a fraction of the rendered video width (from the camera setup) */
 const O_RADIUS = { desktop: 0.0891, mobile: 0.1188 };
 
@@ -24,7 +20,6 @@ type Mode = "video" | "static";
 export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
   const section = useRef<HTMLElement>(null);
   const stage = useRef<HTMLDivElement>(null);
-  const video = useRef<HTMLVideoElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
   const intro = useRef<HTMLDivElement>(null);
   const caps = useRef<(HTMLDivElement | null)[]>([]);
@@ -38,9 +33,6 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
   const exit = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<Mode>("video");
   const [ready, setReady] = useState(false);
-  /** frames or video: site.ts setting, or ?scrub= in the address */
-  const [kind, setKind] = useState<ScrubKind | null>(null);
-  useEffect(() => setKind(readScrubKind()), []);
 
   const posterRef = useRef<HTMLImageElement>(null);
 
@@ -62,7 +54,6 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
       loading.set({ video: 1, poster: true });
       return;
     }
-    if (!kind) return;
     const sec = section.current!;
     const st = stage.current!;
     let orient: "desktop" | "mobile" = window.innerHeight > window.innerWidth ? "mobile" : "desktop";
@@ -72,22 +63,15 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
       st.dataset.video = s;
       if (s === "failed") loading.set({ video: 1 });
     };
-    // "frames": picture sequence on a canvas; "video": the mp4 (switch in src/data/site.ts)
-    let scrub: { setTarget(p: number): void; destroy(): void } | undefined;
+    // the film is a picture sequence on a canvas (public/frames), a separate set for portrait screens
+    let scrub: FrameScrub | undefined;
     let lastP = 0;
     const load = () => {
-      if (kind === "frames") {
-        scrub?.destroy();
-        const set = site.video.frames[orient];
-        const fs = new FrameScrub(canvas.current!, { path: set.path, count: set.count, version: site.video.frames.version, smoothing: 0.14, onProgress, onState });
-        fs.setTarget(lastP);
-        fs.load();
-        scrub = fs;
-      } else {
-        const vs = (scrub as VideoScrub | undefined) ?? new VideoScrub(video.current!, { fps: site.video.fps, smoothing: 0.14, onProgress, onState });
-        vs.load(orient === "mobile" ? site.video.mobile : site.video.desktop, BYTES[orient]);
-        scrub = vs;
-      }
+      scrub?.destroy();
+      const set = site.video.frames[orient];
+      scrub = new FrameScrub(canvas.current!, { path: set.path, count: set.count, version: site.video.frames.version, smoothing: 0.14, onProgress, onState });
+      scrub.setTarget(lastP);
+      scrub.load();
     };
     load();
 
@@ -212,7 +196,7 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
       scrub?.destroy();
       window.removeEventListener("resize", onResize);
     };
-  }, [chapters, kind]);
+  }, [chapters]);
 
   const skip = () => scroll.scrollTo("#projects");
 
@@ -240,12 +224,7 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
               onError={() => loading.set({ poster: true })}
             />
           </picture>
-          {mode === "video" &&
-            kind && (kind === "frames" ? (
-              <canvas ref={canvas} className={styles.video} aria-hidden="true" />
-            ) : (
-              <video ref={video} className={styles.video} muted playsInline preload="none" tabIndex={-1} aria-hidden="true" />
-            ))}
+          {mode === "video" && <canvas ref={canvas} className={styles.video} aria-hidden="true" />}
           <div className={styles.scrim} />
           <div ref={scrimL} className={styles.scrimLeft} />
           <div ref={scrimB} className={styles.scrimBottom} />

@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3100
+    },
+    {
+      "name": "dark-mode-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "http-server", "out", "-p", "3300", "-c-1", "--silent"],
+      "port": 3300
     }
   ]
 }

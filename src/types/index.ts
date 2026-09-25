@@ -106,21 +106,16 @@ export type SiteConfig = {
   nav: NavItem[];
   sections: NavItem[];
   video: {
-    desktop: string;
-    mobile: string;
     posterDesktop: string;
     posterMobile: string;
     duration: number;
     fps: number;
-    scrub: "frames" | "video";
     frames: {
       desktop: { path: string; count: number };
       mobile: { path: string; count: number };
       fps: number;
       version: number;
     };
-    outroDesktop: string;
-    outroMobile: string;
     ambient: string;
   };
 };

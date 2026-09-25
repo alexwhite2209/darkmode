@@ -12,7 +12,7 @@
  */
 import { ticker } from "./ticker";
 import { damp } from "@/lib/math";
-import type { ScrubState } from "./video-scrub";
+export type ScrubState = "idle" | "loading" | "ready" | "failed";
 
 type Opts = {
   /** folder with 0000.webp … */

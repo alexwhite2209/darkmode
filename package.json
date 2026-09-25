@@ -7,7 +7,7 @@
     "dev": "next dev -p 3100",
     "build": "next build",
     "start": "next start -p 3100",
-    "build:pages": "next build && node production/scripts/pages-postexport.mjs out",
+    "build:static": "node production/scripts/build-static.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

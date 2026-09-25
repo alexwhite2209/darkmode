@@ -40,22 +40,15 @@ export const site: SiteConfig = {
     { id: "contact", label: "Связаться", href: "/#contact", index: "06" },
   ],
   /**
-   * Video files are cached by browsers for a year (next.config.ts), so every time a file is replaced
-   * bump MEDIA_VERSION below — the new address makes browsers download the new file.
+   * The film. Browsers may keep media files for a long time, so every time a file is replaced
+   * bump MEDIA_VERSION (posters, space video) or frames.version — the new address forces a download.
    */
   video: {
-    desktop: asset(`/video/hero-desktop.mp4?v=${MEDIA_VERSION}`),
-    mobile: asset(`/video/hero-mobile.mp4?v=${MEDIA_VERSION}`),
     posterDesktop: asset(`/images/hero-poster-desktop.jpg?v=${MEDIA_VERSION}`),
     posterMobile: asset(`/images/hero-poster-mobile.jpg?v=${MEDIA_VERSION}`),
     duration: 29.71,
     fps: 24,
-    /**
-     * How the film follows the scroll:
-     *   "frames" — a sequence of pictures (smoothest, public/frames, made by production/scripts/make_frames.py)
-     *   "video"  — the mp4 files above (the previous way). Switch back by writing "video".
-     */
-    scrub: "frames",
+    /** the film follows the scroll as a picture sequence (public/frames, production/scripts/make_frames.py) */
     frames: {
       desktop: { path: asset("/frames/desktop"), count: 713 },
       mobile: { path: asset("/frames/mobile"), count: 713 },
@@ -64,9 +57,6 @@ export const site: SiteConfig = {
       /** bump when the frames are replaced, so browsers download the new ones */
       version: 2,
     },
-    /** the first seconds of the hero, played backwards at the very end: out of the O onto the logo */
-    outroDesktop: asset(`/video/outro-desktop.mp4?v=${MEDIA_VERSION}`),
-    outroMobile: asset(`/video/outro-mobile.mp4?v=${MEDIA_VERSION}`),
     /** space behind the rest of the page, forward then backward in a seamless loop */
     ambient: asset(`/video/ambient.mp4?v=${MEDIA_VERSION}`),
   },

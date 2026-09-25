@@ -3,9 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { site } from "@/data/site";
 import { scroll, ranges } from "@/animations/scroll";
-import { VideoScrub, type ScrubState } from "@/animations/video-scrub";
-import { FrameScrub } from "@/animations/frame-scrub";
-import { readScrubKind, type ScrubKind } from "@/lib/scrub-mode";
+import { FrameScrub, type ScrubState } from "@/animations/frame-scrub";
 import { smoothstep } from "@/lib/math";
 import { ambient } from "@/lib/store";
 import { PhoneIcon } from "@/components/Buttons";
@@ -22,13 +20,10 @@ const OUTRO_SECONDS = 2.8;
 
 export function Finale() {
   const section = useRef<HTMLElement>(null);
-  const video = useRef<HTMLVideoElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
   const cover = useRef<HTMLDivElement>(null);
   const actions = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<"video" | "static">("video");
-  const [kind, setKind] = useState<ScrubKind | null>(null);
-  useEffect(() => setKind(readScrubKind()), []);
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -36,29 +31,20 @@ export function Finale() {
       setMode("static");
       return;
     }
-    if (!kind) return;
     const sec = section.current!;
     let orient: "desktop" | "mobile" = window.innerHeight > window.innerWidth ? "mobile" : "desktop";
     const onState = (s: ScrubState) => (sec.dataset.video = s);
-    let scrub: { setTarget(p: number): void; destroy(): void } | undefined;
+    let scrub: FrameScrub | undefined;
     let lastT = 1;
     let loaded = false;
     const load = () => {
       loaded = true;
-      if (kind === "frames") {
-        // the first 2.8 s of the same frame sequence as the hero (already in the browser cache)
-        scrub?.destroy();
-        const set = site.video.frames[orient];
-        const fs = new FrameScrub(canvas.current!, { path: set.path, count: set.count, version: site.video.frames.version, use: Math.round(OUTRO_SECONDS * site.video.frames.fps), smoothing: 0.16, onState });
-        fs.setTarget(lastT);
-        fs.load();
-        scrub = fs;
-      } else {
-        const vs = (scrub as VideoScrub | undefined) ?? new VideoScrub(video.current!, { fps: site.video.fps, smoothing: 0.16, onState });
-        vs.setTarget(lastT);
-        vs.load(orient === "mobile" ? site.video.outroMobile : site.video.outroDesktop);
-        scrub = vs;
-      }
+      // the first 2.8 s of the same frame sequence as the hero (already in the browser cache)
+      scrub?.destroy();
+      const set = site.video.frames[orient];
+      scrub = new FrameScrub(canvas.current!, { path: set.path, count: set.count, version: site.video.frames.version, use: Math.round(OUTRO_SECONDS * site.video.frames.fps), smoothing: 0.16, onState });
+      scrub.setTarget(lastT);
+      scrub.load();
     };
     // fetch only when the finale is near
     const io = new IntersectionObserver(
@@ -105,7 +91,7 @@ export function Finale() {
       scrub?.destroy();
       window.removeEventListener("resize", onResize);
     };
-  }, [kind]);
+  }, []);
 
   return (
     <section ref={section} id="contact-end" className={styles.finale} data-mode={mode} aria-labelledby="finale-title">
@@ -115,12 +101,7 @@ export function Finale() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={site.video.posterDesktop} alt="" loading="lazy" decoding="async" />
         </picture>
-        {mode === "video" &&
-          kind && (kind === "frames" ? (
-            <canvas ref={canvas} className={styles.video} aria-hidden="true" />
-          ) : (
-            <video ref={video} className={styles.video} muted playsInline preload="none" tabIndex={-1} aria-hidden="true" />
-          ))}
+        {mode === "video" && <canvas ref={canvas} className={styles.video} aria-hidden="true" />}
         <div ref={cover} className={styles.cover} aria-hidden="true" />
         <div className={styles.scrim} aria-hidden="true" />
 

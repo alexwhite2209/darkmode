@@ -28,26 +28,30 @@ npm run build && npm start
 Для CMS достаточно заменить тела функций на запросы — UI не меняется. API уже есть:
 `/api/news`, `/api/articles`, `/api/guides`, `/api/projects`, `/api/content`.
 
-## Кадры вместо видео
+## Сайт для хостинга
 
-Ролик по скроллу показывается последовательностью кадров на canvas (`src/animations/frame-scrub.ts`):
-`public/frames/desktop` (1600×900) и `public/frames/mobile` (720×1280), все 24 кадра в секунду, каждый кадр целиком,
-делает `python production/scripts/make_frames.py`. После замены кадров поднять `frames.version` в `src/data/site.ts`.
-Вернуть прежний способ (mp4) — в `src/data/site.ts` написать `scrub: "video"`.
-Копия сайта до перехода на кадры: `production/backup/site_video_2026-09-25`.
+```bash
+npm run build:static
+```
+
+Получаются папка `out/` и архив `darkmode-site.zip`. **Содержимое** `out/` (или распакованный архив) загрузить
+в корень сайта на хостинге (обычно `public_html`). Сервер не нужен, это обычные файлы; `.htaccess` для Apache
+уже внутри. Домен для SEO задаётся перед сборкой: `$env:NEXT_PUBLIC_SITE_URL="https://домен.ru"; npm run build:static`.
+Если сайт будет не в корне домена, а в папке, ещё `$env:NEXT_PUBLIC_BASE_PATH="/папка"`.
+
+## Ролик = кадры
+
+Ролик по скроллу — последовательность кадров на canvas (`src/animations/frame-scrub.ts`):
+`public/frames/desktop` (1600×900) и `public/frames/mobile` (720×1280), 24 кадра в секунду, каждый кадр целиком.
+Нарезает `python production/scripts/make_frames.py` из роликов в `production/higgsfield/takes`.
+После замены кадров поднять `frames.version` в `src/data/site.ts`.
 
 ## Замена ролика (после Higgsfield)
 
-1. Положить финальные ролики: `public/video/hero-desktop.mp4` (16:9) и `public/video/hero-mobile.mp4` (9:16).
-   Кодировать с частым ключевым кадром, иначе скролл будет дёргаться:
-   ```bash
-   ffmpeg -i final-16x9.mp4 -c:v libx264 -preset slow -crf 20 -g 8 -keyint_min 8 -sc_threshold 0 -bf 0 -pix_fmt yuv420p -movflags +faststart -an public/video/hero-desktop.mp4
-   ```
-   Финал страницы — первые 2,8 с ролика, их сайт проигрывает задом наперёд (выход из буквы O):
-   ```bash
-   ffmpeg -i public/video/hero-desktop.mp4 -t 2.8 -c:v libx264 -crf 21 -g 8 -keyint_min 8 -sc_threshold 0 -bf 0 -pix_fmt yuv420p -movflags +faststart -an public/video/outro-desktop.mp4
-   ```
-   (то же для `outro-mobile.mp4`). Фон после ролика — `public/video/ambient.mp4`: космос вперёд + назад одним файлом, чтобы петля шла без скачка.
+1. Положить ролики 16:9 и 9:16 в `production/higgsfield/takes`, прописать их в `production/scripts/make_frames.py`
+   и нарезать кадры: `python production/scripts/make_frames.py`; поднять `frames.version` в `src/data/site.ts`.
+   Финал страницы (выход из буквы O) берёт первые 2,8 с тех же кадров. Фон после ролика —
+   `public/video/ambient.mp4`: космос вперёд + назад одним файлом, чтобы петля шла без скачка.
 2. Постеры (первый кадр): `public/images/hero-poster-desktop.jpg`, `hero-poster-mobile.jpg`.
 3. Кадры миров для превью: `python production/scripts/extract_stills.py` (берёт кадры из рендера).
 4. Если длина ролика изменится — поправить `video.duration` в `src/data/site.ts` и секунды в `chapters.ts`.
