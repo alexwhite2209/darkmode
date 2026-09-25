@@ -3,4 +3,4 @@
 :HL["/darkmode/fonts/science-gothic-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/darkmode/fonts/geist-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/darkmode/fonts/science-gothic-latin.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"y9ZOIAra3BtjrRTJeYlma"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"ML35LTROk_DZ5ucBNEFIv"}
