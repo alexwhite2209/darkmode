@@ -2,6 +2,52 @@
   "news": [
     {
       "kind": "news",
+      "title": "Meta представила Muse, обошедшего ChatGPT по популярности",
+      "slug": "meta-muse-ai-agent",
+      "description": "Meta представила Muse, личного ИИ-агента, который опередил ChatGPT.",
+      "category": "AI",
+      "tags": [
+        "AI",
+        "технологии",
+        "стартапы"
+      ],
+      "publishedAt": "2026-09-25",
+      "readingMinutes": 1,
+      "image": {
+        "src": "https://techcrunch.com/wp-content/uploads/2018/02/tc-backlight-e1689786273147.png?w=1200",
+        "alt": "Meta представила Muse, обошедшего ChatGPT по популярности",
+        "width": 1280,
+        "height": 720
+      },
+      "content": [
+        {
+          "type": "p",
+          "text": "**Meta запустила личного ИИ-агента Muse, который опережает ChatGPT.**"
+        },
+        {
+          "type": "p",
+          "text": "Meta представила своего нового личного ИИ-агента Muse, который, по сообщениям, обошел ранние показатели ChatGPT. Это произошло на фоне обновлений моделей от OpenAI и Anthropic, которые выпустили свои новинки в течение короткого времени. Muse также планирует расширение на умные очки и устройства в стиле Tamagotchi."
+        },
+        {
+          "type": "p",
+          "text": "В новом эпизоде подкаста TechCrunch Equity обсуждаются стратегии Meta в области потребительского ИИ и влияние на стартапы, которые пытаются использовать эту технологию. Участники подкаста анализируют, куда направляются инвестиции и какие ИИ-продукты могут стать частью повседневной жизни людей."
+        },
+        {
+          "type": "p",
+          "text": "Также в подкасте рассматриваются планы a16z по созданию новой школы для начинающих основателей, IPO Oura и успешный раунд финансирования Ema для автоматизации HR, IT и финансовых процессов с помощью ИИ-агентов. Слушайте полный эпизод, чтобы узнать больше о текущих трендах в ИИ и технологиях."
+        },
+        {
+          "type": "p",
+          "text": "Источник: TechCrunch AI"
+        },
+        {
+          "type": "p",
+          "text": "Оригинал: [https://techcrunch.com/podcast/metas-muse-just-stole-the-ai-spotlight-from-openai-and-anthropic/](https://techcrunch.com/podcast/metas-muse-just-stole-the-ai-spotlight-from-openai-and-anthropic/)"
+        }
+      ]
+    },
+    {
+      "kind": "news",
       "title": "Microsoft представила новый Copilot — суперприложение для работы с ИИ",
       "slug": "microsoft-copilot-superapp",
       "description": "Microsoft анонсировала новое приложение Copilot, объединяющее ИИ-функции для работы.",
