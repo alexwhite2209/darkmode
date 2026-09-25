@@ -42,7 +42,7 @@ export function Finale() {
       // the first 2.8 s of the same frame sequence as the hero (already in the browser cache)
       scrub?.destroy();
       const set = site.video.frames[orient];
-      scrub = new FrameScrub(canvas.current!, { path: set.path, count: set.count, version: site.video.frames.version, use: Math.round(OUTRO_SECONDS * site.video.frames.fps), smoothing: 0.16, onState });
+      scrub = new FrameScrub(canvas.current!, { path: set.path, count: set.count, focusX: set.focusX, focusWidth: set.focusWidth, version: site.video.frames.version, use: Math.round(OUTRO_SECONDS * site.video.frames.fps), smoothing: 0.16, onState });
       scrub.setTarget(lastT);
       scrub.load();
     };

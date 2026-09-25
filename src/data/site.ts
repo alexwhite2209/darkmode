@@ -51,7 +51,8 @@ export const site: SiteConfig = {
     /** the film follows the scroll as a picture sequence (public/frames, production/scripts/make_frames.py) */
     frames: {
       desktop: { path: asset("/frames/desktop"), count: 713 },
-      mobile: { path: asset("/frames/mobile"), count: 713 },
+      /** focusX: the DARK MODE logo in the portrait film sits right of centre (x 390 of 720) and is 84% of its width: it always fits whole */
+      mobile: { path: asset("/frames/mobile"), count: 713, focusX: 0.542, focusWidth: 0.9 },
       /** frames per second of film in the sequence: every frame of the 24 fps film */
       fps: 24,
       /** bump when the frames are replaced, so browsers download the new ones */

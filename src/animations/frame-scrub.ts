@@ -23,6 +23,10 @@ type Opts = {
   /** use only the first `use` frames (the finale plays the start of the film) */
   use?: number;
   smoothing?: number;
+  /** horizontal point of the picture (0..1) kept in the centre when the sides are cropped */
+  focusX?: number;
+  /** share of the picture width (around focusX) that must always fit on screen */
+  focusWidth?: number;
   /** appended as ?v= so browsers fetch replaced frames */
   version?: number;
   onProgress?: (fraction: number) => void;
@@ -161,11 +165,26 @@ export class FrameScrub {
   private cover(img: HTMLImageElement) {
     const cw = this.canvas.width;
     const ch = this.canvas.height;
-    const s = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
-    const w = img.naturalWidth * s;
-    const h = img.naturalHeight * s;
+    const iw = img.naturalWidth;
+    const ih = img.naturalHeight;
+    const cover = Math.max(cw / iw, ch / ih);
+    // focusWidth: this share of the picture width must stay on screen (the logo on narrow phones)
+    const fwid = this.opts.focusWidth ?? 0;
+    const s = fwid ? Math.min(cover, cw / (fwid * iw)) : cover;
+    const w = iw * s;
+    const h = ih * s;
+    const fx = this.opts.focusX ?? 0.5;
     this.ctx.imageSmoothingQuality = "high";
-    this.ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
+    if (s < cover) {
+      // the picture no longer fills the height: a dimmed, covering copy fills the strips
+      const wc = iw * cover;
+      this.ctx.drawImage(img, Math.min(0, Math.max(cw - wc, cw / 2 - fx * wc)), (ch - ih * cover) / 2, wc, ih * cover);
+      this.ctx.fillStyle = "rgba(2, 2, 3, 0.72)";
+      this.ctx.fillRect(0, 0, cw, ch);
+    }
+    // keep focusX in the centre, never uncovering an edge when the picture is wider than the screen
+    const x = w >= cw ? Math.min(0, Math.max(cw - w, cw / 2 - fx * w)) : cw / 2 - fx * w;
+    this.ctx.drawImage(img, x, (ch - h) / 2, w, h);
   }
 
   private draw() {

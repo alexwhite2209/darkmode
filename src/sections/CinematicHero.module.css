@@ -290,7 +290,7 @@
 }
 .filmLabel {
   position: absolute;
-  right: var(--gutter);
+  left: var(--gutter);
   top: 10px;
   font-size: 12px;
   letter-spacing: 0.06em;

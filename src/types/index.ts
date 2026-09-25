@@ -111,8 +111,8 @@ export type SiteConfig = {
     duration: number;
     fps: number;
     frames: {
-      desktop: { path: string; count: number };
-      mobile: { path: string; count: number };
+      desktop: { path: string; count: number; focusX?: number; focusWidth?: number };
+      mobile: { path: string; count: number; focusX?: number; focusWidth?: number };
       fps: number;
       version: number;
     };
