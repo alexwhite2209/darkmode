@@ -7,7 +7,8 @@
  *   is instant: no seeking and no video decoding while scrolling
  * - loading is progressive: every 16th frame first (the preloader waits only for these), then 8th, 4th,
  *   2nd, then the rest in the background; until a frame arrives, the nearest loaded one is drawn
- * - every frame of the 24 fps film is drawn whole, as shot (no blending between frames)
+ * - every frame of the 24 fps film is drawn whole; only near the midpoint between two frames a short,
+ *   light crossfade softens the step (BLEND)
  * - the canvas covers its box like object-fit: cover and follows resizes
  */
 import { ticker } from "./ticker";
@@ -25,10 +26,14 @@ type Opts = {
   /** appended as ?v= so browsers fetch replaced frames */
   version?: number;
   onProgress?: (fraction: number) => void;
+  /** share of ALL frames loaded (the first pass is only what the preloader waits for) */
+  onTotal?: (fraction: number) => void;
   onState?: (s: ScrubState) => void;
 };
 
 const PASSES = [16, 8, 4, 2, 1];
+/** share of the step between two frames that is crossfaded (light: the rest shows whole frames) */
+const BLEND = 0.4;
 const PARALLEL = 6;
 
 export class FrameScrub {
@@ -39,6 +44,7 @@ export class FrameScrub {
   private order: number[] = [];
   private firstPass = 0;
   private loadedFirst = 0;
+  private settled = 0;
   private cancelled = false;
   private unsub: (() => void) | null = null;
   private ro: ResizeObserver | null = null;
@@ -84,6 +90,7 @@ export class FrameScrub {
     this.setState("loading");
     let next = 0;
     let failed = 0;
+    const done = (k: number) => Math.min(1, k / this.order.length);
     const one = (): Promise<void> | void => {
       if (this.cancelled || next >= this.order.length) return;
       const i = this.order[next++];
@@ -104,6 +111,7 @@ export class FrameScrub {
           failed++;
         })
         .finally(() => {
+          if (!this.cancelled) this.opts.onTotal?.(done(++this.settled));
           if (first) {
             this.loadedFirst++;
             this.opts.onProgress?.(this.loadedFirst / this.firstPass);
@@ -161,13 +169,29 @@ export class FrameScrub {
   }
 
   private draw() {
-    // one whole frame at a time, as shot
-    const i = this.nearest(Math.round(this.shown * (this.n - 1)));
-    if (i < 0) return;
-    const key = `${i}|${this.canvas.width}x${this.canvas.height}`;
+    // each frame stays crisp for most of its step; only around the midpoint to the next frame
+    // a short, light crossfade (BLEND of the step) softens the change
+    const pos = this.shown * (this.n - 1);
+    const a = Math.floor(pos);
+    const t = pos - a;
+    const ia = this.nearest(a);
+    if (ia < 0) return;
+    const b = Math.min(this.n - 1, a + 1);
+    const ib = this.imgs[b] ? b : ia;
+    const x = Math.min(1, Math.max(0, (t - (0.5 - BLEND / 2)) / BLEND));
+    const k = ib === ia ? 0 : Math.round(x * x * (3 - 2 * x) * 12) / 12;
+    const key = `${ia}|${ib}|${k}|${this.canvas.width}x${this.canvas.height}`;
     if (key === this.drawn) return;
     this.drawn = key;
-    this.cover(this.imgs[i]!);
+    if (k >= 1) this.cover(this.imgs[ib]!);
+    else {
+      this.cover(this.imgs[ia]!);
+      if (k > 0) {
+        this.ctx.globalAlpha = k;
+        this.cover(this.imgs[ib]!);
+        this.ctx.globalAlpha = 1;
+      }
+    }
   }
 
   private tick = (_t: number, dt: number) => {

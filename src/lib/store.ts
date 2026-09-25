@@ -23,6 +23,8 @@ export const loading = createStore({
   poster: false,
   /** 0..1 of the hero video download; 1 also when the video is skipped or failed */
   video: 0,
+  /** 0..1 of the whole film (all frames / the whole video): the loading bar after the preloader */
+  film: 0,
   /** true once the preloader has opened */
   done: false,
   /** the page has a cinematic hero (home) */

@@ -2,7 +2,7 @@
 
     python production/scripts/make_frames.py
 
-public/frames/desktop/0000.webp … (1600x900) (phones use the video public/video/hero-mobile.mp4),
+public/frames/desktop/0000.webp … (1600x900) and public/frames/mobile/0000.webp … (720x1280),
 every frame of the 24 fps film. Prints the counts for src/data/site.ts.
 The finale (way back out of the O) reuses the first frames of the same sequence.
 """
@@ -14,6 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 TAKES = os.path.join(ROOT, "production", "higgsfield", "takes")
 JOBS = [
     ("desktop", os.path.join(TAKES, "take03_1080p_desktop_black05.mp4"), (1600, 900), 72),
+    ("mobile", os.path.join(TAKES, "take02_1080p_mobile_black05.mp4"), (720, 1280), 68),
 ]
 STEP = 1  # every frame: 24 per second
 

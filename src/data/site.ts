@@ -46,18 +46,16 @@ export const site: SiteConfig = {
   video: {
     posterDesktop: asset(`/images/hero-poster-desktop.jpg?v=${MEDIA_VERSION}`),
     posterMobile: asset(`/images/hero-poster-mobile.jpg?v=${MEDIA_VERSION}`),
-    /** phone (portrait): the film as a video, and its first 2.8 s for the finale */
-    mobile: asset(`/video/hero-mobile.mp4?v=${MEDIA_VERSION}`),
-    outroMobile: asset(`/video/outro-mobile.mp4?v=${MEDIA_VERSION}`),
     duration: 29.71,
     fps: 24,
     /** the film follows the scroll as a picture sequence (public/frames, production/scripts/make_frames.py) */
     frames: {
       desktop: { path: asset("/frames/desktop"), count: 713 },
+      mobile: { path: asset("/frames/mobile"), count: 713 },
       /** frames per second of film in the sequence: every frame of the 24 fps film */
       fps: 24,
       /** bump when the frames are replaced, so browsers download the new ones */
-      version: 2,
+      version: 3,
     },
     /** space behind the rest of the page, forward then backward in a seamless loop */
     ambient: asset(`/video/ambient.mp4?v=${MEDIA_VERSION}`),

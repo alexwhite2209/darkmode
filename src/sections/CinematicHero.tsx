@@ -5,7 +5,6 @@ import type { Chapter } from "@/types";
 import { site } from "@/data/site";
 import { scroll, ranges } from "@/animations/scroll";
 import { FrameScrub, type ScrubState } from "@/animations/frame-scrub";
-import { VideoScrub } from "@/animations/video-scrub";
 import { band, clamp, smoothstep } from "@/lib/math";
 import { ambient, loading } from "@/lib/store";
 import { SplitWords } from "@/components/SplitWords";
@@ -18,11 +17,36 @@ const O_RADIUS = { desktop: 0.0891, mobile: 0.1188 };
 
 type Mode = "video" | "static";
 
+/** Thin bar at the top of the film: how much of the film is loaded. Shown after the preloader, fades at 100%. */
+function FilmBar() {
+  const bar = useRef<HTMLDivElement>(null);
+  const fill = useRef<HTMLSpanElement>(null);
+  const label = useRef<HTMLSpanElement>(null);
+  useEffect(() => {
+    let last = -1;
+    const update = (s: ReturnType<typeof loading.get>) => {
+      const f = Math.round(s.film * 100);
+      if (f === last && !s.done) return;
+      last = f;
+      fill.current!.style.transform = `scaleX(${s.film.toFixed(3)})`;
+      label.current!.textContent = `Загрузка ролика ${f}%`;
+      bar.current!.dataset.state = !s.done ? "wait" : f >= 100 ? "done" : "on";
+    };
+    update(loading.get());
+    return loading.subscribe(update);
+  }, []);
+  return (
+    <div ref={bar} className={styles.filmBar} data-state="wait" role="progressbar" aria-label="Загрузка ролика">
+      <span ref={fill} className={styles.filmFill} />
+      <span ref={label} className={styles.filmLabel} />
+    </div>
+  );
+}
+
 export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
   const section = useRef<HTMLElement>(null);
   const stage = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
-  const video = useRef<HTMLVideoElement>(null);
   const intro = useRef<HTMLDivElement>(null);
   const caps = useRef<(HTMLDivElement | null)[]>([]);
   const scrimL = useRef<HTMLDivElement>(null);
@@ -63,29 +87,17 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
     const onProgress = (f: number) => loading.set({ video: f });
     const onState = (s: ScrubState) => {
       st.dataset.video = s;
-      if (s === "failed") loading.set({ video: 1 });
+      if (s === "failed") loading.set({ video: 1, film: 1 });
     };
-    // computer: picture sequence on a canvas (public/frames/desktop); phone (portrait): the mp4 video
-    let scrub: { setTarget(p: number): void; destroy(): void } | undefined;
+    // the film is a picture sequence on a canvas (public/frames), a separate set for portrait screens
+    let scrub: FrameScrub | undefined;
     let lastP = 0;
     const load = () => {
       scrub?.destroy();
-      const cv = canvas.current!;
-      const v = video.current!;
-      cv.style.display = orient === "desktop" ? "" : "none";
-      v.style.display = orient === "mobile" ? "" : "none";
-      if (orient === "desktop") {
-        const set = site.video.frames.desktop;
-        const fs = new FrameScrub(cv, { path: set.path, count: set.count, version: site.video.frames.version, smoothing: 0.14, onProgress, onState });
-        fs.setTarget(lastP);
-        fs.load();
-        scrub = fs;
-      } else {
-        const vs = new VideoScrub(v, { fps: site.video.fps, smoothing: 0.14, onProgress, onState });
-        vs.setTarget(lastP);
-        vs.load(site.video.mobile, 6_500_000);
-        scrub = vs;
-      }
+      const set = site.video.frames[orient];
+      scrub = new FrameScrub(canvas.current!, { path: set.path, count: set.count, version: site.video.frames.version, smoothing: 0.14, onProgress, onState, onTotal: (f) => loading.set({ film: f }) });
+      scrub.setTarget(lastP);
+      scrub.load();
     };
     load();
 
@@ -238,12 +250,7 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
               onError={() => loading.set({ poster: true })}
             />
           </picture>
-          {mode === "video" && (
-            <>
-              <canvas ref={canvas} className={styles.video} aria-hidden="true" />
-              <video ref={video} className={styles.video} muted playsInline preload="none" tabIndex={-1} aria-hidden="true" />
-            </>
-          )}
+          {mode === "video" && <canvas ref={canvas} className={styles.video} aria-hidden="true" />}
           <div className={styles.scrim} />
           <div ref={scrimL} className={styles.scrimLeft} />
           <div ref={scrimB} className={styles.scrimBottom} />
@@ -294,6 +301,8 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
               )}
             </div>
           ))}
+
+        {mode === "video" && <FilmBar />}
 
         <div ref={hud} className={styles.hud} aria-hidden="true" style={{ opacity: 0 }}>
           <svg viewBox="0 0 24 24" className={styles.hudRing}>

@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { site } from "@/data/site";
 import { scroll, ranges } from "@/animations/scroll";
 import { FrameScrub, type ScrubState } from "@/animations/frame-scrub";
-import { VideoScrub } from "@/animations/video-scrub";
 import { smoothstep } from "@/lib/math";
 import { ambient } from "@/lib/store";
 import { PhoneIcon } from "@/components/Buttons";
@@ -22,7 +21,6 @@ const OUTRO_SECONDS = 2.8;
 export function Finale() {
   const section = useRef<HTMLElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
-  const video = useRef<HTMLVideoElement>(null);
   const cover = useRef<HTMLDivElement>(null);
   const actions = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<"video" | "static">("video");
@@ -36,29 +34,17 @@ export function Finale() {
     const sec = section.current!;
     let orient: "desktop" | "mobile" = window.innerHeight > window.innerWidth ? "mobile" : "desktop";
     const onState = (s: ScrubState) => (sec.dataset.video = s);
-    let scrub: { setTarget(p: number): void; destroy(): void } | undefined;
+    let scrub: FrameScrub | undefined;
     let lastT = 1;
     let loaded = false;
     const load = () => {
       loaded = true;
+      // the first 2.8 s of the same frame sequence as the hero (already in the browser cache)
       scrub?.destroy();
-      const cv = canvas.current!;
-      const v = video.current!;
-      cv.style.display = orient === "desktop" ? "" : "none";
-      v.style.display = orient === "mobile" ? "" : "none";
-      if (orient === "desktop") {
-        // the first 2.8 s of the same frame sequence as the hero (already in the browser cache)
-        const set = site.video.frames.desktop;
-        const fs = new FrameScrub(cv, { path: set.path, count: set.count, version: site.video.frames.version, use: Math.round(OUTRO_SECONDS * site.video.frames.fps), smoothing: 0.16, onState });
-        fs.setTarget(lastT);
-        fs.load();
-        scrub = fs;
-      } else {
-        const vs = new VideoScrub(v, { fps: site.video.fps, smoothing: 0.16, onState });
-        vs.setTarget(lastT);
-        vs.load(site.video.outroMobile);
-        scrub = vs;
-      }
+      const set = site.video.frames[orient];
+      scrub = new FrameScrub(canvas.current!, { path: set.path, count: set.count, version: site.video.frames.version, use: Math.round(OUTRO_SECONDS * site.video.frames.fps), smoothing: 0.16, onState });
+      scrub.setTarget(lastT);
+      scrub.load();
     };
     // fetch only when the finale is near
     const io = new IntersectionObserver(
@@ -115,12 +101,7 @@ export function Finale() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={site.video.posterDesktop} alt="" loading="lazy" decoding="async" />
         </picture>
-        {mode === "video" && (
-          <>
-            <canvas ref={canvas} className={styles.video} aria-hidden="true" />
-            <video ref={video} className={styles.video} muted playsInline preload="none" tabIndex={-1} aria-hidden="true" />
-          </>
-        )}
+        {mode === "video" && <canvas ref={canvas} className={styles.video} aria-hidden="true" />}
         <div ref={cover} className={styles.cover} aria-hidden="true" />
         <div className={styles.scrim} aria-hidden="true" />
 
