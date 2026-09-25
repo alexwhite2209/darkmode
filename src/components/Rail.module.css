@@ -1,0 +1,46 @@
+.rail {
+  position: fixed;
+  right: clamp(14px, 1.6vw, 28px);
+  top: 50%;
+  z-index: 40;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  mix-blend-mode: normal;
+}
+.track { position: relative; width: 1px; background: rgba(255, 255, 255, 0.12); order: 2; }
+.bar {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--c-corona-hot), var(--c-corona));
+  transform-origin: top;
+  transform: scaleY(0);
+  box-shadow: 0 0 10px rgba(255, 122, 26, 0.6);
+}
+.rail ol { display: grid; gap: 18px; justify-items: end; }
+.rail a {
+  display: grid;
+  justify-items: end;
+  gap: 2px;
+  padding: 2px 0;
+  color: var(--c-dim);
+  transition: color 0.4s var(--ease-out);
+}
+.index { font-size: 12px; letter-spacing: 0.08em; }
+.label {
+  font-size: 13px;
+  line-height: 1.1;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s var(--ease-out), opacity 0.4s var(--ease-out);
+}
+.rail li[data-active="true"] a { color: var(--c-chrome); }
+li[data-active="true"] .index { color: var(--c-corona); }
+li[data-active="true"] .label { max-height: 20px; opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+  .rail a:hover { color: var(--c-chrome); }
+  .rail a:hover .label { max-height: 20px; opacity: 1; }
+}
+@media (max-width: 1099px), (max-height: 620px) { .rail { display: none; } }

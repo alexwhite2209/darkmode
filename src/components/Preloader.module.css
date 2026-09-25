@@ -1,0 +1,41 @@
+.pre {
+  --hole: 0px;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(60% 50% at 50% 50%, #0b0c12 0%, var(--c-space) 70%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent var(--hole), #000 calc(var(--hole) + 1px));
+  mask-image: radial-gradient(circle at 50% 50%, transparent var(--hole), #000 calc(var(--hole) + 1px));
+}
+.center { position: relative; width: 160px; height: 160px; display: grid; place-items: center; }
+.ring { position: absolute; inset: 0; transform: rotate(-90deg); overflow: visible; }
+.track { fill: #020203; stroke: #1b1d24; stroke-width: 1.5; }
+.arc {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px rgba(255, 122, 26, 0.7));
+}
+.pre[data-state="opening"] .arc { stroke-width: 4; filter: drop-shadow(0 0 22px rgba(255, 150, 60, 0.95)); transition: filter 0.4s, stroke-width 0.4s; }
+.num {
+  position: relative;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--c-steel);
+}
+.caption {
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--f-display);
+  font-stretch: 180%;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  color: var(--c-dim);
+}
+.pre[data-state="opening"] .num, .pre[data-state="opening"] .caption { opacity: 0; transition: opacity 0.3s; }

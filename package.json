@@ -1,0 +1,26 @@
+{
+  "name": "dark-mode-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DARK MODE — cinematic studio website (Next.js, scroll-driven video, Lenis)",
+  "scripts": {
+    "dev": "next dev -p 3100",
+    "build": "next build",
+    "start": "next start -p 3100",
+    "build:pages": "next build && node production/scripts/pages-postexport.mjs out",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lenis": "1.3.26",
+    "next": "16.3.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "puppeteer-core": "^25.12.0",
+    "typescript": "5.9.3"
+  }
+}

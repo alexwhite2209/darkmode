@@ -1,0 +1,18 @@
+node_modules/
+.next/
+out/
+*.log
+.env*.local
+next-env.d.ts
+*.tsbuildinfo
+
+# heavy production files (kept locally; regenerate from the Blender scene / Higgsfield takes)
+production/blender/renders/
+production/blender/renders_v2/
+production/blender/checkpoints/
+production/higgsfield/takes/
+production/higgsfield/segments/
+production/brand/*.mp4
+production/qa/
+production/pages-test/
+production/backup/

@@ -1,0 +1,60 @@
+.finale { position: relative; height: 320vh; }
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #000;
+}
+.poster, .poster img, .video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video { opacity: 0; transition: opacity 0.6s var(--ease-out); }
+.finale[data-video="ready"] .video { opacity: 1; }
+/* the black inside the O at the start of the way out */
+.cover { position: absolute; inset: 0; background: #000; }
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(3, 3, 6, 0.86) 0%, rgba(3, 3, 6, 0.5) 22%, rgba(3, 3, 6, 0) 45%);
+  pointer-events: none;
+}
+
+.actions {
+  --k: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: max(28px, env(safe-area-inset-bottom));
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: 0 var(--gutter);
+  text-align: center;
+  opacity: var(--k);
+  transform: translate3d(0, calc((1 - var(--k)) * 30px), 0);
+}
+.title {
+  font-family: var(--f-display);
+  font-stretch: 125%;
+  font-weight: 700;
+  font-size: clamp(20px, 2vw, 30px);
+  line-height: 1.1;
+  color: var(--c-chrome);
+}
+.buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.legal { font-size: 12px; color: var(--c-dim); }
+
+.finale[data-mode="static"] { height: auto; }
+.finale[data-mode="static"] .stage { position: relative; height: 100svh; }
+.finale[data-mode="static"] .cover { display: none; }
+
+@media (max-width: 767px) {
+  .buttons { display: grid; width: 100%; max-width: 360px; }
+  .buttons :global(.btn) { width: 100%; justify-content: center; }
+}
