@@ -12,6 +12,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["--yes", "http-server", "out", "-p", "3300", "-c-1", "--silent"],
       "port": 3300
+    },
+    {
+      "name": "dark-mode-ghpages-test",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "http-server", "C:/Users/sergw/AppData/Local/Temp/claude/E------/78ec3f2d-9bb6-4768-aea1-c63937bd5c96/scratchpad/pagesroot", "-p", "3400", "-c-1", "--silent"],
+      "port": 3400
     }
   ]
 }

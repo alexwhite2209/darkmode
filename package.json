@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start -p 3100",
     "build:static": "node production/scripts/build-static.mjs",
+    "build:pages": "node production/scripts/build-static.mjs --pages",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

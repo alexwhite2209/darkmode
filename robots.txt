@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+
+Host: https://alexwhite2209.github.io/darkmode
+Sitemap: https://alexwhite2209.github.io/darkmode/sitemap.xml

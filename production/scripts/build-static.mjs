@@ -11,9 +11,16 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const OUT = path.join(ROOT, "out");
 const ZIP = path.join(ROOT, "darkmode-site.zip");
+// --pages: the GitHub Pages copy (https://alexwhite2209.github.io/darkmode/), placed in the root of the repo
+const PAGES = process.argv.includes("--pages");
+const env = { ...process.env, STATIC_EXPORT: "1" };
+if (PAGES) {
+  env.NEXT_PUBLIC_BASE_PATH = "/darkmode";
+  env.NEXT_PUBLIC_SITE_URL = "https://alexwhite2209.github.io/darkmode";
+}
 
 fs.rmSync(OUT, { recursive: true, force: true });
-const r = spawnSync("npx", ["next", "build"], { cwd: ROOT, stdio: "inherit", shell: true, env: { ...process.env, STATIC_EXPORT: "1" } });
+const r = spawnSync("npx", ["next", "build"], { cwd: ROOT, stdio: "inherit", shell: true, env });
 if (r.status !== 0) process.exit(r.status ?? 1);
 
 // Next 16 writes route prefetch payloads as nested folders (news/__next.$d$kind/__PAGE__.txt) but requests
@@ -56,6 +63,24 @@ AddType video/mp4 .mp4
 `,
 );
 fs.writeFileSync(path.join(OUT, ".nojekyll"), "");
+
+if (PAGES) {
+  // GitHub Pages serves the root of `main`: copy the build there, replacing the previous copy
+  // (its entries are listed in .pages-files, so the source folders are never touched)
+  const LIST = path.join(ROOT, ".pages-files");
+  const old = fs.existsSync(LIST) ? fs.readFileSync(LIST, "utf8").split("\n").filter(Boolean) : [];
+  for (const e of old) fs.rmSync(path.join(ROOT, e), { recursive: true, force: true });
+  const entries = fs.readdirSync(OUT).filter((e) => e !== ".htaccess");
+  const clash = entries.filter((e) => fs.existsSync(path.join(ROOT, e)));
+  if (clash.length) {
+    console.error("these names already exist in the project root:", clash.join(", "));
+    process.exit(1);
+  }
+  for (const e of entries) fs.cpSync(path.join(OUT, e), path.join(ROOT, e), { recursive: true });
+  fs.writeFileSync(LIST, entries.join("\n") + "\n");
+  console.log(`\nGitHub Pages copy: ${entries.length} entries in the project root (listed in .pages-files)`);
+  process.exit(0);
+}
 
 fs.rmSync(ZIP, { force: true });
 const z = spawnSync("tar", ["-a", "-c", "-f", ZIP, "-C", OUT, "."], { stdio: "inherit", shell: false });

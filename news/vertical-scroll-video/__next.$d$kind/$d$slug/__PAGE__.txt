@@ -1,0 +1,95 @@
+1:"$Sreact.fragment"
+2:I[22016,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],""]
+3:I[5870,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"DiscussButton"]
+4:I[97367,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+9:I[97367,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"ViewportBoundary"]
+a:I[97367,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"MetadataBoundary"]
+:HL["/darkmode/images/worlds/drift-portrait.webp","image"]
+:HL["/darkmode/_next/static/chunks/0-s5qpc7-w67k.css","style"]
+8:X
+1b:X
+1b:C
+0:{"buildId":"jkGB0-VLDyABroY1h6NZP","data":[{"rsc":["$","$1","c",{"children":[["$","article",null,{"className":"media-module__z8Rynq__article","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Скролл-видео теперь снимаем и под телефон\",\"description\":\"Для каждого сайта с роликом делаем отдельную вертикальную версию, чтобы на телефоне было не хуже, чем на большом экране.\",\"datePublished\":\"2026-09-10\",\"image\":\"/darkmode/images/worlds/drift-portrait.webp\",\"author\":{\"@type\":\"Organization\",\"name\":\"DARK MODE\"}}"}}],["$","div",null,{"className":"media-module__z8Rynq__wrap","children":[["$","$L2",null,{"href":"/news","className":"media-module__z8Rynq__back","children":"Новости"}],["$","p",null,{"className":"media-module__z8Rynq__meta","children":[["$","span",null,{"className":"media-module__z8Rynq__kind","children":"Новость"}],["$","time",null,{"dateTime":"2026-09-10","children":"10 сентября 2026 г."}],["$","span",null,{"children":[2," мин чтения"]}]]}],["$","h1",null,{"className":"media-module__z8Rynq__title","children":"Скролл-видео теперь снимаем и под телефон"}],["$","p",null,{"className":"media-module__z8Rynq__desc","children":"Для каждого сайта с роликом делаем отдельную вертикальную версию, чтобы на телефоне было не хуже, чем на большом экране."}],["$","figure",null,{"className":"media-module__z8Rynq__cover","children":["$","img",null,{"src":"/darkmode/images/worlds/drift-portrait.webp","alt":"Вертикальный кадр: машина в заносе","width":1280,"height":720}]}],"$undefined",["$","div",null,{"className":"media-module__z8Rynq__body","children":[["$","p","0",{"children":"Больше половины посетителей открывают сайт с телефона. Горизонтальный ролик, обрезанный до вертикали, теряет главное: машину, товар, лицо."}],["$","p","1",{"children":"Поэтому камера для телефонной версии ставится отдельно. Движение то же, но кадр собран под вертикальный экран, а тяжёлые эффекты упрощены, чтобы видео шло плавно."}]]}],["$","ul",null,{"className":"media-module__z8Rynq__tags","aria-label":"Теги","children":[["$","li","мобильная версия",{"children":"мобильная версия"}],["$","li","видео",{"children":"видео"}]]}],["$","aside",null,{"className":"media-module__z8Rynq__cta","children":[["$","p",null,{"className":"t-h3","children":"Хотите такой сайт?"}],["$","$L3",null,{}]]}]]}]]}],[["$","link","0",{"rel":"stylesheet","href":"/darkmode/_next/static/chunks/0-s5qpc7-w67k.css","precedence":"next"}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":"$@7","staleTime":"$8","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L9",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, viewport-fit=cover"}],["$","meta","2",{"name":"theme-color","content":"#05060a"}],["$","meta","3",{"name":"color-scheme","content":"dark"}]]}],["$","div",null,{"hidden":true,"children":["$","$La",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Скролл-видео теперь снимаем и под телефон | DARK MODE"}],["$","meta","1",{"name":"description","content":"Для каждого сайта с роликом делаем отдельную вертикальную версию, чтобы на телефоне было не хуже, чем на большом экране."}],["$","meta","2",{"name":"application-name","content":"DARK MODE"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","link","4",{"rel":"canonical","href":"https://alexwhite2209.github.io/darkmode/news/vertical-scroll-video/"}],["$","meta","5",{"name":"format-detection","content":"telephone=no"}],["$","meta","6",{"property":"og:title","content":"Скролл-видео теперь снимаем и под телефон"}],["$","meta","7",{"property":"og:description","content":"Для каждого сайта с роликом делаем отдельную вертикальную версию, чтобы на телефоне было не хуже, чем на большом экране."}],["$","meta","8",{"property":"og:url","content":"https://alexwhite2209.github.io/darkmode/news/vertical-scroll-video/"}],["$","meta","9",{"property":"og:image","content":"https://alexwhite2209.github.io/darkmode/darkmode/images/worlds/drift-portrait.webp"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12","$L13","$L14","$L15","$L16","$L17"]}]}]}],null]}],"isPartial":"$@18","staleTime":"$8","varyParams":null},{"rsc":"$L19","isPartial":"$@1a","staleTime":"$8","varyParams":"$1b"},{"rsc":"$L1c","isPartial":"$@1d","staleTime":"$8","varyParams":"$1b"},{"rsc":"$L1e","isPartial":"$@1f","staleTime":"$8","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@20","rootVaryParams":null,"needsRuntimeRequest":"$@21"}
+22:I[27201,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"IconMark"]
+23:I[39756,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"default"]
+24:I[37457,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"default"]
+26:I[71829,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"MotionProvider"]
+:HL["/darkmode/_next/static/chunks/3c-stj9dzrxd2.css","style"]
+:HL["/darkmode/fonts/science-gothic-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/darkmode/fonts/geist-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/darkmode/fonts/science-gothic-latin.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+6:null
+b:["$","meta","10",{"property":"og:image:width","content":"1280"}]
+c:["$","meta","11",{"property":"og:image:height","content":"720"}]
+d:["$","meta","12",{"property":"og:image:alt","content":"Вертикальный кадр: машина в заносе"}]
+e:["$","meta","13",{"property":"og:type","content":"article"}]
+f:["$","meta","14",{"property":"article:published_time","content":"2026-09-10"}]
+10:["$","meta","15",{"property":"article:tag","content":"мобильная версия"}]
+11:["$","meta","16",{"property":"article:tag","content":"видео"}]
+12:["$","meta","17",{"name":"twitter:card","content":"summary_large_image"}]
+13:["$","meta","18",{"name":"twitter:title","content":"DARK MODE | Сайты, которые запоминают"}]
+14:["$","meta","19",{"name":"twitter:description","content":"DARK MODE делает только сайты: скролл-видео, 3D и анимация, которые запоминают. Корпоративные, продуктовые, авто, недвижимость, отели и рестораны."}]
+15:["$","meta","20",{"name":"twitter:image","content":"https://alexwhite2209.github.io/darkmode/darkmode/images/og.jpg"}]
+16:["$","link","21",{"rel":"icon","href":"/darkmode/icon.svg?icon.0l1-hejy9bd0m.svg","sizes":"any","type":"image/svg+xml"}]
+17:["$","$L22","22",{}]
+19:["$","$1","c",{"children":[null,["$","$L23",null,{"parallelRouterKey":"children","template":["$","$L24",null,{}]}]]}]
+1c:["$","$1","c",{"children":[null,["$","$L23",null,{"parallelRouterKey":"children","template":["$","$L24",null,{}]}]]}]
+25:T7b7,@font-face {
+  font-family: "Science Gothic";
+  src: url("/darkmode/fonts/science-gothic-cyrillic.woff2") format("woff2");
+  font-weight: 100 900; font-stretch: 50% 200%; font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Science Gothic";
+  src: url("/darkmode/fonts/science-gothic-latin.woff2") format("woff2");
+  font-weight: 100 900; font-stretch: 50% 200%; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Science Gothic";
+  src: url("/darkmode/fonts/science-gothic-latin-ext.woff2") format("woff2");
+  font-weight: 100 900; font-stretch: 50% 200%; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("/darkmode/fonts/geist-cyrillic.woff2") format("woff2");
+  font-weight: 100 900; font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("/darkmode/fonts/geist-latin.woff2") format("woff2");
+  font-weight: 100 900; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("/darkmode/fonts/geist-latin-ext.woff2") format("woff2");
+  font-weight: 100 900; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}1e:["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/darkmode/_next/static/chunks/3c-stj9dzrxd2.css","precedence":"next"}],["$","script","script-0",{"src":"/darkmode/_next/static/chunks/1y1hsa32zympw.js","async":true}],["$","script","script-1",{"src":"/darkmode/_next/static/chunks/1qgn-g1pib60j.js","async":true}]],["$","html",null,{"lang":"ru","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[[["$","link","/darkmode/fonts/science-gothic-cyrillic.woff2",{"rel":"preload","href":"/darkmode/fonts/science-gothic-cyrillic.woff2","as":"font","type":"font/woff2","crossOrigin":""}],["$","link","/darkmode/fonts/geist-cyrillic.woff2",{"rel":"preload","href":"/darkmode/fonts/geist-cyrillic.woff2","as":"font","type":"font/woff2","crossOrigin":""}],["$","link","/darkmode/fonts/science-gothic-latin.woff2",{"rel":"preload","href":"/darkmode/fonts/science-gothic-latin.woff2","as":"font","type":"font/woff2","crossOrigin":""}]],["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$25"}}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Перейти к содержимому"}],["$","$L26",null,{"children":[["$","div",null,{"className":"Environment-module__h9fqDW__env","aria-hidden":"true","children":[["$","div",null,{"className":"Environment-module__h9fqDW__stars"}],["$","div",null,{"className":"Environment-module__h9fqDW__glow"}],["$","div",null,{"className":"Environment-module__h9fqDW__glow2"}],["$","svg",null,{"className":"Environment-module__h9fqDW__grain","xmlns":"http://www.w3.org/2000/svg","children":[["$","filter",null,{"id":"env-grain","children":[["$","feTurbulence",null,{"type":"fractalNoise","baseFrequency":"0.9","numOctaves":"2","stitchTiles":"stitch"}],"$L27"]}],"$L28"]}]]}],"$L29","$L2a","$L2b","$L2c","$L2d","$L2e"]}]]}]]}]]}]
+2f:I[90514,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"Ambient"]
+30:I[24179,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"Preloader"]
+31:I[2971,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"Header"]
+32:I[13642,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"Footer"]
+33:I[27059,["/darkmode/_next/static/chunks/1y1hsa32zympw.js","/darkmode/_next/static/chunks/1qgn-g1pib60j.js"],"Cursor"]
+27:["$","feColorMatrix",null,{"values":"0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0"}]
+28:["$","rect",null,{"width":"100%","height":"100%","filter":"url(#env-grain)"}]
+29:["$","$L2f",null,{}]
+2a:["$","$L30",null,{}]
+2b:["$","$L31",null,{}]
+2c:["$","main",null,{"id":"main","tabIndex":-1,"children":["$","$L23",null,{"parallelRouterKey":"children","template":["$","$L24",null,{}],"notFound":[["$","section",null,{"style":{"minHeight":"80vh","display":"grid","placeItems":"center","padding":"120px var(--gutter) 60px","textAlign":"center"},"children":["$","div",null,{"style":{"display":"grid","gap":20,"justifyItems":"center"},"children":[["$","div",null,{"aria-hidden":"true","style":{"width":120,"height":120,"borderRadius":"50%","background":"#020203","boxShadow":"inset -8px 0 16px -6px rgba(255,170,90,.95), 0 0 0 1.5px rgba(255,122,26,.8), 0 0 50px rgba(255,122,26,.35)"}}],["$","h1",null,{"className":"t-h2","children":"Здесь пусто"}],["$","p",null,{"className":"t-lead","children":"Такой страницы нет. Возможно, ссылка устарела."}],["$","$L2",null,{"href":"/","className":"btn btn--ghost","children":"На главную"}]]}]}],[]]}]}]
+2d:["$","$L32",null,{}]
+2e:["$","$L33",null,{}]
+21:true
+8:300
+8:C
+20:0
+18:"$undefined"
+1a:"$undefined"
+1d:"$undefined"
+7:"$undefined"
+1f:"$undefined"
