@@ -6,7 +6,7 @@ import { asset } from "@/lib/asset";
  * (header, buttons, finale, SEO, sitemap). The domain comes from NEXT_PUBLIC_SITE_URL.
  */
 const PHONE = "+79101459965";
-const MEDIA_VERSION = 4;
+const MEDIA_VERSION = 5;
 
 export const site: SiteConfig = {
   name: "DARK MODE",
@@ -46,12 +46,14 @@ export const site: SiteConfig = {
   video: {
     posterDesktop: asset(`/images/hero-poster-desktop.jpg?v=${MEDIA_VERSION}`),
     posterMobile: asset(`/images/hero-poster-mobile.jpg?v=${MEDIA_VERSION}`),
+    /** phone (portrait): the film as a video, and its first 2.8 s for the finale */
+    mobile: asset(`/video/hero-mobile.mp4?v=${MEDIA_VERSION}`),
+    outroMobile: asset(`/video/outro-mobile.mp4?v=${MEDIA_VERSION}`),
     duration: 29.71,
     fps: 24,
     /** the film follows the scroll as a picture sequence (public/frames, production/scripts/make_frames.py) */
     frames: {
       desktop: { path: asset("/frames/desktop"), count: 713 },
-      mobile: { path: asset("/frames/mobile"), count: 713 },
       /** frames per second of film in the sequence: every frame of the 24 fps film */
       fps: 24,
       /** bump when the frames are replaced, so browsers download the new ones */

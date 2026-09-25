@@ -3,4 +3,4 @@
 :HL["/darkmode/fonts/science-gothic-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/darkmode/fonts/geist-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/darkmode/fonts/science-gothic-latin.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"kind","param":{"type":"d","key":"news","siblings":["api"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"jkGB0-VLDyABroY1h6NZP"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"kind","param":{"type":"d","key":"news","siblings":["api"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"Nt3Gq2ImH-YoMeIpk4G1o"}

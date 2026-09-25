@@ -108,11 +108,12 @@ export type SiteConfig = {
   video: {
     posterDesktop: string;
     posterMobile: string;
+    mobile: string;
+    outroMobile: string;
     duration: number;
     fps: number;
     frames: {
       desktop: { path: string; count: number };
-      mobile: { path: string; count: number };
       fps: number;
       version: number;
     };
