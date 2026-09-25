@@ -1,0 +1,7 @@
+:HL["/darkmode/_next/static/chunks/3c-stj9dzrxd2.css","style"]
+:HL["/darkmode/_next/static/chunks/2_j7imz_jpw6-.css","style"]
+:HL["/darkmode/fonts/science-gothic-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/darkmode/fonts/geist-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/darkmode/fonts/science-gothic-latin.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["https://techcrunch.com/wp-content/uploads/2026/03/GettyImages-2235971874.jpg?resize=1200,800","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"kind","param":{"type":"d","key":"news","siblings":["api"]},"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"nscale-privlekla-finansirovanie","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"u9KrPEPfyPT4OBCUl-lB2"}

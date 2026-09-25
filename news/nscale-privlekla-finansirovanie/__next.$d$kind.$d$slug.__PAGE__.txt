@@ -1,0 +1,84 @@
+1:"$Sreact.fragment"
+2:I[22016,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],""]
+3:I[5870,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"DiscussButton"]
+:HL["https://techcrunch.com/wp-content/uploads/2026/03/GettyImages-2235971874.jpg?resize=1200,800","image"]
+:HL["/darkmode/_next/static/chunks/2_j7imz_jpw6-.css","style"]
+6:X
+b:X
+b:C
+0:{"buildId":"u9KrPEPfyPT4OBCUl-lB2","data":[{"rsc":["$","$1","c",{"children":[["$","article",null,{"className":"media-module__z8Rynq__article","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Британская AI-компания Nscale привлекла $3.36 млрд перед IPO\",\"description\":\"Британская AI-компания Nscale получила $3.36 млрд перед IPO в этом году.\",\"datePublished\":\"2026-09-25\",\"image\":\"https://techcrunch.com/wp-content/uploads/2026/03/GettyImages-2235971874.jpg?resize=1200,800\",\"author\":{\"@type\":\"Organization\",\"name\":\"DARK MODE\"}}"}}],["$","div",null,{"className":"media-module__z8Rynq__wrap","children":[["$","$L2",null,{"href":"/news","className":"media-module__z8Rynq__back","children":"Новости"}],["$","p",null,{"className":"media-module__z8Rynq__meta","children":[["$","span",null,{"className":"media-module__z8Rynq__kind","children":"Новость"}],["$","time",null,{"dateTime":"2026-09-25","children":"25 сентября 2026 г."}],["$","span",null,{"children":[1," мин чтения"]}]]}],["$","h1",null,{"className":"media-module__z8Rynq__title","children":"Британская AI-компания Nscale привлекла $3.36 млрд перед IPO"}],["$","p",null,{"className":"media-module__z8Rynq__desc","children":"Британская AI-компания Nscale получила $3.36 млрд перед IPO в этом году."}],["$","figure",null,{"className":"media-module__z8Rynq__cover","children":["$","img",null,{"src":"https://techcrunch.com/wp-content/uploads/2026/03/GettyImages-2235971874.jpg?resize=1200,800","alt":"Британская AI-компания Nscale привлекла $3.36 млрд перед IPO","width":1280,"height":720}]}],"$undefined",["$","div",null,{"className":"media-module__z8Rynq__body","children":[["$","p","0",{"children":["",["$","strong","1",{"children":"Nscale анонсировала привлечение финансирования перед выходом на биржу."}],""]}],["$","p","1",{"children":["Британская компания Nscale, работающая в области неоклауд, привлекла $3.36 миллиарда финансирования перед своим IPO, которое ожидается в этом году. Финансирование оформлено в виде конвертируемых облигаций и подчеркивает огромные капитальные затраты на создание центров обработки данных для AI."]}],["$","p","2",{"children":["Раунд финансирования возглавил хедж-фонд Third Point. Из этой суммы $2.36 миллиарда доступны компании сразу, а оставшийся $1 миллиард поступит от существующего инвестора Nvidia в середине ноября. Облигации будут конвертированы в акции после завершения IPO."]}],["$","p","3",{"children":["Nscale подала документы на IPO на прошлой неделе и ожидается, что ее стоимость на NYSE составит $35 миллиардов. Компания планирует привлечь $3 миллиарда в ходе размещения. С момента отделения от австралийской компании Arkon Energy два года назад, Nscale заключила контракты на сумму более $103 миллиардов."]}],["$","p","4",{"children":["В настоящее время компания разрабатывает несколько крупных кампусов центров обработки данных, включая объекты в Норвегии и Западной Вирджинии."]}],["$","p","5",{"children":["Источник: TechCrunch"]}],["$","p","6",{"children":["Оригинал: ",["$","a","1",{"href":"https://techcrunch.com/2026/09/25/ahead-of-u-s-ipo-british-ai-neocloud-nscale-secures-3-36b-in-convertible-finacing/","target":"_blank","rel":"noopener sponsored","children":"https://techcrunch.com/2026/09/25/ahead-of-u-s-ipo-british-ai-neocloud-nscale-secures-3-36b-in-convertible-finacing/"}],""]}]]}],["$","ul",null,{"className":"media-module__z8Rynq__tags","aria-label":"Теги","children":[["$","li","Nscale",{"children":"Nscale"}],["$","li","IPO",{"children":"IPO"}],["$","li","финансирование",{"children":"финансирование"}]]}],["$","aside",null,{"className":"media-module__z8Rynq__cta","children":[["$","p",null,{"className":"t-h3","children":"Хотите такой сайт?"}],["$","$L3",null,{}]]}]]}]]}],[["$","link","0",{"rel":"stylesheet","href":"/darkmode/_next/static/chunks/2_j7imz_jpw6-.css","precedence":"next"}]],"$L4"]}],"isPartial":"$@5","staleTime":"$6","varyParams":null},{"rsc":"$L7","isPartial":"$@8","staleTime":"$6","varyParams":null},{"rsc":"$L9","isPartial":"$@a","staleTime":"$6","varyParams":"$b"},{"rsc":"$Lc","isPartial":"$@d","staleTime":"$6","varyParams":"$b"},{"rsc":"$Le","isPartial":"$@f","staleTime":"$6","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@10","rootVaryParams":null,"needsRuntimeRequest":"$@11"}
+12:I[97367,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+15:I[97367,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"ViewportBoundary"]
+16:I[97367,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"MetadataBoundary"]
+17:I[27201,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"IconMark"]
+18:I[39756,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"default"]
+19:I[37457,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"default"]
+1b:I[71829,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"MotionProvider"]
+:HL["/darkmode/_next/static/chunks/3c-stj9dzrxd2.css","style"]
+:HL["/darkmode/fonts/science-gothic-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/darkmode/fonts/geist-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/darkmode/fonts/science-gothic-latin.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+4:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+7:["$","$1","h",{"children":[null,["$","$L15",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, viewport-fit=cover"}],["$","meta","2",{"name":"theme-color","content":"#05060a"}],["$","meta","3",{"name":"color-scheme","content":"dark"}]]}],["$","div",null,{"hidden":true,"children":["$","$L16",null,{"children":["$","$13",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Британская AI-компания Nscale привлекла $3.36 млрд перед IPO | DARK MODE"}],["$","meta","1",{"name":"description","content":"Британская AI-компания Nscale получила $3.36 млрд перед IPO в этом году."}],["$","meta","2",{"name":"application-name","content":"DARK MODE"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","link","4",{"rel":"canonical","href":"https://alexwhite2209.github.io/darkmode/news/nscale-privlekla-finansirovanie/"}],["$","meta","5",{"name":"format-detection","content":"telephone=no"}],["$","meta","6",{"property":"og:title","content":"Британская AI-компания Nscale привлекла $3.36 млрд перед IPO"}],["$","meta","7",{"property":"og:description","content":"Британская AI-компания Nscale получила $3.36 млрд перед IPO в этом году."}],["$","meta","8",{"property":"og:url","content":"https://alexwhite2209.github.io/darkmode/news/nscale-privlekla-finansirovanie/"}],["$","meta","9",{"property":"og:image","content":"https://techcrunch.com/wp-content/uploads/2026/03/GettyImages-2235971874.jpg?resize=1200,800"}],["$","meta","10",{"property":"og:image:width","content":"1280"}],["$","meta","11",{"property":"og:image:height","content":"720"}],["$","meta","12",{"property":"og:image:alt","content":"Британская AI-компания Nscale привлекла $3.36 млрд перед IPO"}],["$","meta","13",{"property":"og:type","content":"article"}],["$","meta","14",{"property":"article:published_time","content":"2026-09-25"}],["$","meta","15",{"property":"article:tag","content":"Nscale"}],["$","meta","16",{"property":"article:tag","content":"IPO"}],["$","meta","17",{"property":"article:tag","content":"финансирование"}],["$","meta","18",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","19",{"name":"twitter:title","content":"DARK MODE | Сайты, которые запоминают"}],["$","meta","20",{"name":"twitter:description","content":"DARK MODE делает только сайты: скролл-видео, 3D и анимация, которые запоминают. Корпоративные, продуктовые, авто, недвижимость, отели и рестораны."}],["$","meta","21",{"name":"twitter:image","content":"https://alexwhite2209.github.io/darkmode/darkmode/images/og.jpg"}],["$","link","22",{"rel":"icon","href":"/darkmode/icon.svg?icon.0l1-hejy9bd0m.svg","sizes":"any","type":"image/svg+xml"}],["$","$L17","23",{}]]}]}]}],null]}]
+9:["$","$1","c",{"children":[null,["$","$L18",null,{"parallelRouterKey":"children","template":["$","$L19",null,{}]}]]}]
+c:["$","$1","c",{"children":[null,["$","$L18",null,{"parallelRouterKey":"children","template":["$","$L19",null,{}]}]]}]
+1a:T7b7,@font-face {
+  font-family: "Science Gothic";
+  src: url("/darkmode/fonts/science-gothic-cyrillic.woff2") format("woff2");
+  font-weight: 100 900; font-stretch: 50% 200%; font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Science Gothic";
+  src: url("/darkmode/fonts/science-gothic-latin.woff2") format("woff2");
+  font-weight: 100 900; font-stretch: 50% 200%; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Science Gothic";
+  src: url("/darkmode/fonts/science-gothic-latin-ext.woff2") format("woff2");
+  font-weight: 100 900; font-stretch: 50% 200%; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("/darkmode/fonts/geist-cyrillic.woff2") format("woff2");
+  font-weight: 100 900; font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("/darkmode/fonts/geist-latin.woff2") format("woff2");
+  font-weight: 100 900; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("/darkmode/fonts/geist-latin-ext.woff2") format("woff2");
+  font-weight: 100 900; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}e:["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/darkmode/_next/static/chunks/3c-stj9dzrxd2.css","precedence":"next"}],["$","script","script-0",{"src":"/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","async":true}],["$","script","script-1",{"src":"/darkmode/_next/static/chunks/2z056yll2tleb.js","async":true}]],["$","html",null,{"lang":"ru","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[[["$","link","/darkmode/fonts/science-gothic-cyrillic.woff2",{"rel":"preload","href":"/darkmode/fonts/science-gothic-cyrillic.woff2","as":"font","type":"font/woff2","crossOrigin":""}],["$","link","/darkmode/fonts/geist-cyrillic.woff2",{"rel":"preload","href":"/darkmode/fonts/geist-cyrillic.woff2","as":"font","type":"font/woff2","crossOrigin":""}],["$","link","/darkmode/fonts/science-gothic-latin.woff2",{"rel":"preload","href":"/darkmode/fonts/science-gothic-latin.woff2","as":"font","type":"font/woff2","crossOrigin":""}]],["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$1a"}}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Перейти к содержимому"}],["$","$L1b",null,{"children":[["$","div",null,{"className":"Environment-module__h9fqDW__env","aria-hidden":"true","children":[["$","div",null,{"className":"Environment-module__h9fqDW__stars"}],["$","div",null,{"className":"Environment-module__h9fqDW__glow"}],["$","div",null,{"className":"Environment-module__h9fqDW__glow2"}],["$","svg",null,{"className":"Environment-module__h9fqDW__grain","xmlns":"http://www.w3.org/2000/svg","children":[["$","filter",null,{"id":"env-grain","children":[["$","feTurbulence",null,{"type":"fractalNoise","baseFrequency":"0.9","numOctaves":"2","stitchTiles":"stitch"}],"$L1c"]}],"$L1d"]}]]}],"$L1e","$L1f","$L20","$L21","$L22","$L23"]}]]}]]}]]}]
+24:I[90514,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"Ambient"]
+25:I[24179,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"Preloader"]
+26:I[2971,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"Header"]
+27:I[13642,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"Footer"]
+28:I[27059,["/darkmode/_next/static/chunks/2gwpoh6dwiex7.js","/darkmode/_next/static/chunks/2z056yll2tleb.js"],"Cursor"]
+14:null
+1c:["$","feColorMatrix",null,{"values":"0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0"}]
+1d:["$","rect",null,{"width":"100%","height":"100%","filter":"url(#env-grain)"}]
+1e:["$","$L24",null,{}]
+1f:["$","$L25",null,{}]
+20:["$","$L26",null,{}]
+21:["$","main",null,{"id":"main","tabIndex":-1,"children":["$","$L18",null,{"parallelRouterKey":"children","template":["$","$L19",null,{}],"notFound":[["$","section",null,{"style":{"minHeight":"80vh","display":"grid","placeItems":"center","padding":"120px var(--gutter) 60px","textAlign":"center"},"children":["$","div",null,{"style":{"display":"grid","gap":20,"justifyItems":"center"},"children":[["$","div",null,{"aria-hidden":"true","style":{"width":120,"height":120,"borderRadius":"50%","background":"#020203","boxShadow":"inset -8px 0 16px -6px rgba(255,170,90,.95), 0 0 0 1.5px rgba(255,122,26,.8), 0 0 50px rgba(255,122,26,.35)"}}],["$","h1",null,{"className":"t-h2","children":"Здесь пусто"}],["$","p",null,{"className":"t-lead","children":"Такой страницы нет. Возможно, ссылка устарела."}],["$","$L2",null,{"href":"/","className":"btn btn--ghost","children":"На главную"}]]}]}],[]]}]}]
+22:["$","$L27",null,{}]
+23:["$","$L28",null,{}]
+11:true
+6:300
+6:C
+10:0
+8:"$undefined"
+a:"$undefined"
+d:"$undefined"
+f:"$undefined"
+5:"$undefined"
