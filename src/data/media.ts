@@ -1,9 +1,12 @@
 import { asset } from "@/lib/asset";
 import type { Article, Guide, NewsItem } from "@/types";
+// Материалы из Dark Mode News Engine: программа дописывает их в feed.json через GitHub, сайт пересобирается сам.
+import feed from "./feed.json";
 
 const img = (name: string, alt: string) => ({ src: asset(`/images/worlds/${name}.webp`), alt, width: 1280, height: 720 });
 
 export const news: NewsItem[] = [
+  ...(feed.news as NewsItem[]),
   {
     kind: "news",
     title: "Запустили сайт студии: семь миров одним кадром",
@@ -54,6 +57,7 @@ export const news: NewsItem[] = [
 ];
 
 export const articles: Article[] = [
+  ...(feed.articles as Article[]),
   {
     kind: "article",
     title: "Почему скролл-видео держит внимание лучше слайдера",

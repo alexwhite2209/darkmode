@@ -45,6 +45,26 @@ export async function generateMetadata({ params }: { params: Promise<{ kind: str
   };
 }
 
+/** Текст с [ссылками](https://…) и **жирным** — так приходят материалы из News Engine (в том числе партнёрские ссылки). */
+function Rich({ text }: { text: string }) {
+  const parts = text.split(/(\[[^\]]+\]\(https?:\/\/[^)\s]+\)|\*\*[^*]+\*\*)/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        const link = part.match(/^\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)$/);
+        if (link)
+          return (
+            <a key={i} href={link[2]} target="_blank" rel="noopener sponsored">
+              {link[1]}
+            </a>
+          );
+        if (part.startsWith("**") && part.endsWith("**") && part.length > 4) return <strong key={i}>{part.slice(2, -2)}</strong>;
+        return part;
+      })}
+    </>
+  );
+}
+
 function Block({ b }: { b: ContentBlock }) {
   switch (b.type) {
     case "h2":
@@ -53,14 +73,24 @@ function Block({ b }: { b: ContentBlock }) {
       return (
         <ul>
           {b.items.map((i) => (
-            <li key={i}>{i}</li>
+            <li key={i}>
+              <Rich text={i} />
+            </li>
           ))}
         </ul>
       );
     case "quote":
-      return <blockquote>{b.text}</blockquote>;
+      return (
+        <blockquote>
+          <Rich text={b.text} />
+        </blockquote>
+      );
     default:
-      return <p>{b.text}</p>;
+      return (
+        <p>
+          <Rich text={b.text} />
+        </p>
+      );
   }
 }
 
