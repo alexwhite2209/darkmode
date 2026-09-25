@@ -1,4 +1,55 @@
 {
-  "news": [],
+  "news": [
+    {
+      "kind": "news",
+      "title": "Microsoft представила новый Copilot — суперприложение для работы с ИИ",
+      "slug": "microsoft-copilot-superapp",
+      "description": "Microsoft анонсировала новое приложение Copilot, объединяющее ИИ-функции для работы.",
+      "category": "AI",
+      "tags": [
+        "AI",
+        "Стартапы",
+        "Hardware"
+      ],
+      "publishedAt": "2026-09-25",
+      "readingMinutes": 1,
+      "image": {
+        "src": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/copilothed.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+        "alt": "Microsoft представила новый Copilot — суперприложение для работы с ИИ",
+        "width": 1280,
+        "height": 720
+      },
+      "content": [
+        {
+          "type": "p",
+          "text": "**Microsoft официально анонсировала новое приложение Copilot, объединяющее три ИИ-функции.**"
+        },
+        {
+          "type": "p",
+          "text": "Microsoft представила новое приложение Copilot, которое объединяет функции ИИ-чата, кодирования и цифрового помощника в одном интерфейсе. В рамках запуска компания также переименовала Scout, своего ИИ-помощника, в Autopilot."
+        },
+        {
+          "type": "p",
+          "text": "Приложение Copilot будет иметь три вкладки: Home, Code и Autopilot. Вкладка Home объединяет Copilot Chat и Cowork, предоставляя пользователям персонализированную панель для важных писем, запросов на встречи и обсуждений в Teams. Вкладка Code позволяет пользователям создавать приложения и автоматизации, которые можно делиться с коллегами как облачные внутренние приложения."
+        },
+        {
+          "type": "p",
+          "text": "Autopilot, ранее известный как Scout, теперь представляет собой облачный аналог, который может выполнять задачи, пока вы спите. Он предназначен для бизнеса и интегрируется с Teams, Outlook и другими продуктами Microsoft. Autopilot имеет собственную идентичность и память, что делает его более эффективным для корпоративных пользователей."
+        },
+        {
+          "type": "p",
+          "text": "Microsoft вводит новую модель оплаты за использование функций Cowork, Code и Autopilot, что позволит компаниям контролировать свои расходы на ИИ. Лицензия на Copilot будет включать доступ к Chat, Word, Excel, PowerPoint, Outlook и Teams. Новое приложение Copilot нацелено на то, чтобы стать «операционной системой для работы» в эпоху ИИ, аналогично тому, как Office определил работу в эру ПК."
+        },
+        {
+          "type": "p",
+          "text": "Источник: The Verge"
+        },
+        {
+          "type": "p",
+          "text": "Оригинал: [https://www.theverge.com/news/1000532/microsoft-copilot-super-app-chat-coding-autopilot](https://www.theverge.com/news/1000532/microsoft-copilot-super-app-chat-coding-autopilot)"
+        }
+      ]
+    }
+  ],
   "articles": []
 }
