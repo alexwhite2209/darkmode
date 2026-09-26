@@ -4,4 +4,4 @@
 :HL["/darkmode/fonts/geist-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/darkmode/fonts/science-gothic-latin.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/darkmode/images/worlds/portal.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"kind","param":{"type":"d","key":"articles","siblings":["api"]},"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"scroll-video-vs-slider","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"oq7p2QgYf5K3WIhB4SpZ2"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"kind","param":{"type":"d","key":"articles","siblings":["api"]},"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"scroll-video-vs-slider","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"yW01-8iPztsrOx4Ra5YwK"}
