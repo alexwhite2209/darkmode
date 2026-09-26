@@ -25,6 +25,8 @@ type Opts = {
   smoothing?: number;
   /** horizontal point of the picture (0..1) kept in the centre when the sides are cropped */
   focusX?: number;
+  /** false: whole frames only, no crossfade between neighbours (phones) */
+  crossfade?: boolean;
   /** share of the picture width (around focusX) that must always fit on screen */
   focusWidth?: number;
   /** appended as ?v= so browsers fetch replaced frames */
@@ -198,7 +200,7 @@ export class FrameScrub {
     const b = Math.min(this.n - 1, a + 1);
     const ib = this.imgs[b] ? b : ia;
     const x = Math.min(1, Math.max(0, (t - (0.5 - BLEND / 2)) / BLEND));
-    const k = ib === ia ? 0 : Math.round(x * x * (3 - 2 * x) * 12) / 12;
+    const k = ib === ia ? 0 : this.opts.crossfade === false ? (t < 0.5 ? 0 : 1) : Math.round(x * x * (3 - 2 * x) * 12) / 12;
     const key = `${ia}|${ib}|${k}|${this.canvas.width}x${this.canvas.height}`;
     if (key === this.drawn) return;
     this.drawn = key;

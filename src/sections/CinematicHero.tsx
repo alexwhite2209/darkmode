@@ -95,7 +95,7 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
     const load = () => {
       scrub?.destroy();
       const set = site.video.frames[orient];
-      scrub = new FrameScrub(canvas.current!, { path: set.path, count: set.count, focusX: set.focusX, focusWidth: set.focusWidth, version: site.video.frames.version, smoothing: 0.14, onProgress, onState, onTotal: (f) => loading.set({ film: f }) });
+      scrub = new FrameScrub(canvas.current!, { path: set.path, count: set.count, focusX: set.focusX, crossfade: orient === "desktop", focusWidth: set.focusWidth, version: site.video.frames.version, smoothing: 0.14, onProgress, onState, onTotal: (f) => loading.set({ film: f }) });
       scrub.setTarget(lastP);
       scrub.load();
     };
