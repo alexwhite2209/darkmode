@@ -68,7 +68,7 @@ if (PAGES) {
   // GitHub Pages serves the root of `main`: copy the build there, replacing the previous copy
   // (its entries are listed in .pages-files, so the source folders are never touched)
   const LIST = path.join(ROOT, ".pages-files");
-  const old = fs.existsSync(LIST) ? fs.readFileSync(LIST, "utf8").split("\n").filter(Boolean) : [];
+  const old = fs.existsSync(LIST) ? fs.readFileSync(LIST, "utf8").split(/\r?\n/).map((s) => s.trim()).filter(Boolean) : [];
   for (const e of old) fs.rmSync(path.join(ROOT, e), { recursive: true, force: true });
   const entries = fs.readdirSync(OUT).filter((e) => e !== ".htaccess");
   const clash = entries.filter((e) => fs.existsSync(path.join(ROOT, e)));

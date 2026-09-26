@@ -1,11 +1,6 @@
 .nojekyll
 404
 404.html
-__next.__PAGE__.txt
-__next._full.txt
-__next._tree.txt
-_next
-_not-found
 api
 articles
 fonts
@@ -19,3 +14,8 @@ news
 robots.txt
 sitemap.xml
 video
+_next
+_not-found
+__next._full.txt
+__next._tree.txt
+__next.__PAGE__.txt
