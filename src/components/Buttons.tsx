@@ -5,7 +5,9 @@ import type { MouseEvent } from "react";
 import { Magnetic } from "./Magnetic";
 import { site } from "@/data/site";
 import { scroll } from "@/animations/scroll";
-import { asset } from "@/lib/asset";
+import { asset, BASE_PATH } from "@/lib/asset";
+import { langFromPath, localHref } from "@/i18n";
+import { useT } from "@/i18n/client";
 
 export const ArrowIcon = () => (
   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -37,15 +39,20 @@ export function onCallClick(e: MouseEvent<HTMLAnchorElement>) {
   const end = document.getElementById("contact-end");
   // the end of the finale: the logo with the number and Telegram
   if (end) scroll.scrollTo(end.offsetTop + end.offsetHeight - window.innerHeight, { duration: 2.4 });
-  else window.location.href = asset("/#contact-end");
+  else {
+    const path = window.location.pathname.slice(BASE_PATH.length);
+    window.location.href = asset(localHref(langFromPath(path), "/#contact-end"));
+  }
 }
 
 /** Primary action of the whole site: a phone call (on a computer, jumps to the contacts). */
-export function DiscussButton({ label = "Обсудить проект", className = "" }: { label?: string; className?: string }) {
+export function DiscussButton({ label, className = "" }: { label?: string; className?: string }) {
+  const d = useT();
+  const text = label ?? d.discuss;
   return (
     <Magnetic>
-      <a href={site.contacts.phone.href} className={`btn btn--primary ${className}`} onClick={onCallClick} aria-label={`${label}: позвонить ${site.contacts.phone.label}`}>
-        <span>{label}</span>
+      <a href={site.contacts.phone.href} className={`btn btn--primary ${className}`} onClick={onCallClick} aria-label={`${text}: ${d.callTo} ${site.contacts.phone.label}`}>
+        <span>{text}</span>
         <span className="btn__icon" aria-hidden="true">
           <PhoneIcon />
         </span>

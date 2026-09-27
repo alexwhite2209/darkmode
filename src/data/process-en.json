@@ -1,0 +1,27 @@
+{
+  "idea": {
+    "title": "Idea",
+    "text": "We dig into your business and your buyers, and find the hook that will catch your clients specifically.",
+    "deliverables": ["competitor review", "buyer profile", "the site's core message"]
+  },
+  "system": {
+    "title": "System",
+    "text": "We build the structure and scenarios: what people see first, where they click and where they leave a request.",
+    "deliverables": ["page map", "scroll scenario", "copy"]
+  },
+  "design": {
+    "title": "Design",
+    "text": "We create the brand's world: frames, type, motion. You see the site before any code is written.",
+    "deliverables": ["keyframes", "film storyboard", "screen mockups"]
+  },
+  "development": {
+    "title": "Development",
+    "text": "We build a fast site: scroll-driven video, 3D, animation and easy content editing.",
+    "deliverables": ["mobile-first layout", "animation", "content panel"]
+  },
+  "launch": {
+    "title": "Launch",
+    "text": "Domain, analytics, search engines. The site runs, requests come in, and we stay in touch.",
+    "deliverables": ["publishing", "analytics", "support"]
+  }
+}

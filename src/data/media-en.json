@@ -1,0 +1,115 @@
+{
+  "dark-mode-site-launch": {
+    "title": "Our studio site is live: seven worlds in a single shot",
+    "description": "The new DARK MODE site shows what we build by being one: a journey through seven worlds without a single cut.",
+    "category": "Studio",
+    "tags": ["launch", "scroll video"],
+    "imageAlt": "DARK MODE logo and an eclipse",
+    "content": [
+      { "type": "p", "text": "We decided not to talk about websites but to show one. The hero turns into a journey: through the letter O into a fantasy world, past a dinosaur, into a drift, to a watch, into a city, an office and a lounge." },
+      { "type": "p", "text": "Each world stands for a type of site: 3D, interactive, automotive, product, real estate, corporate, hospitality. The film runs as one continuous shot driven by scroll, so the visitor decides where to linger." },
+      { "type": "h2", "text": "What's inside" },
+      { "type": "list", "items": ["a dedicated video for phones, not a scaled-down copy", "smooth scrolling and lag-free animation", "a media section that grows with the studio"] }
+    ]
+  },
+  "vertical-scroll-video": {
+    "title": "Scroll video now shot for phones too",
+    "description": "Every site with a film gets its own vertical version, so it looks as good on a phone as on a big screen.",
+    "category": "Technology",
+    "tags": ["mobile version", "video"],
+    "imageAlt": "Vertical frame: a car mid-drift",
+    "content": [
+      { "type": "p", "text": "More than half of visitors open a site on their phone. A horizontal film cropped to vertical loses what matters most: the car, the product, the face." },
+      { "type": "p", "text": "So the camera for the phone version is set up separately. The motion stays the same, but the frame is composed for a vertical screen and heavy effects are simplified to keep playback smooth." }
+    ]
+  },
+  "keyframes-before-code": {
+    "title": "You see the site before the first line of code",
+    "description": "Every project now starts with a storyboard and keyframes. You see your future site before development begins.",
+    "category": "Process",
+    "tags": ["process", "design"],
+    "imageAlt": "A watch in a dark studio",
+    "content": [
+      { "type": "p", "text": "Changes at the code stage are expensive and push deadlines. Changes at the frame stage cost almost nothing." },
+      { "type": "p", "text": "So first we assemble a rough cut and keyframes: where the camera is, what's in frame, where the text appears. You review, we refine, and development starts only after your \"yes\"." }
+    ]
+  },
+  "scroll-video-vs-slider": {
+    "title": "Why scroll video holds attention better than a slider",
+    "description": "A slider flips on its own and wears people out. Scroll video hands control to the visitor, and they stay longer.",
+    "category": "Design",
+    "tags": ["scroll video", "conversion"],
+    "imageAlt": "A tunnel of rings",
+    "content": [
+      { "type": "p", "text": "A hero slider spins without asking. While someone is reading the first slide, the second has already replaced it. In the end, none of them sticks." },
+      { "type": "p", "text": "Scroll video works the other way: it moves only when the visitor moves. Want a closer look at a detail? Stop. Want to go on? Scroll. They're in control, and that's why they keep watching." },
+      { "type": "h2", "text": "Where it works best" },
+      { "type": "list", "items": ["a product worth showing from every angle", "a place sold by its atmosphere", "a process easier to show than to describe"] },
+      { "type": "h2", "text": "Where to skip it" },
+      { "type": "p", "text": "If someone came for a price or a phone number, the film gets in the way. Then the video moves lower, and what people are looking for stays on top." }
+    ]
+  },
+  "when-3d-helps": {
+    "title": "The site as a world: when 3D helps and when it hurts",
+    "description": "3D looks expensive on a website, but it doesn't always sell. Here's where it pays off.",
+    "category": "3D",
+    "tags": ["3D", "WebGL"],
+    "imageAlt": "A fantasy valley with floating islands",
+    "content": [
+      { "type": "p", "text": "3D earns its place when an object is hard to grasp from photos: a house not yet built, a mechanism, a car in detail, an interior." },
+      { "type": "p", "text": "Where decisions come down to price and timing, 3D becomes decoration. Beautiful, but it won't add leads." },
+      { "type": "h2", "text": "Three questions before adding 3D" },
+      { "type": "list", "items": ["will the visitor understand the object without 3D?", "will the scene load in time on a phone?", "what will the visitor do after watching?"] }
+    ]
+  },
+  "smooth-animation-on-phones": {
+    "title": "How to build animation that doesn't lag on phones",
+    "description": "Beautiful animation that stutters is worse than none at all. Here's how we keep it smooth.",
+    "category": "Development",
+    "tags": ["performance", "animation"],
+    "imageAlt": "A city at night",
+    "content": [
+      { "type": "p", "text": "Three things break smoothness: heavy video, unnecessary repaints and dozens of independent animations, each running its own timer." },
+      { "type": "p", "text": "We run every motion on the site through a single loop, animate only what's visible and prepare a separate lightweight video for phones." },
+      { "type": "h2", "text": "What we check before handover" },
+      { "type": "list", "items": ["scroll smoothness on an average phone", "time to first screen", "what happens if the video fails to load"] }
+    ]
+  },
+  "project-kickoff-checklist": {
+    "title": "What to prepare before kickoff: a one-evening checklist",
+    "description": "A short list that makes work on your site twice as fast.",
+    "category": "Guide",
+    "tags": ["kickoff", "preparation"],
+    "imageAlt": "Office",
+    "steps": ["Logo and brand colors", "Three sites you like, and why", "Photos of the product or property", "Who your buyer is and what holds them back"],
+    "content": [
+      { "type": "p", "text": "Perfect materials don't exist, and that's fine. But four things save weeks of back-and-forth." },
+      { "type": "list", "items": ["logo and colors, if you have them", "three sites you like, and what exactly you like", "real photos of the product, property or team", "who buys and what stops them from buying"] },
+      { "type": "p", "text": "We'll gather the rest together at the first meeting." }
+    ]
+  },
+  "product-site-media": {
+    "title": "What photos and video a product site needs",
+    "description": "The shot list behind a strong product page.",
+    "category": "Guide",
+    "tags": ["product", "shooting"],
+    "imageAlt": "Watch macro",
+    "steps": ["Wide shot on a clean background", "Three close-ups of details", "Product in hand or in use", "Packaging"],
+    "content": [
+      { "type": "p", "text": "An online shopper can't pick the product up. The page has to do it for them." },
+      { "type": "list", "items": ["a wide shot on a clean background", "close-ups of the three key details", "the product in hand or in use, for scale", "the packaging, if it's bought as a gift"] }
+    ]
+  },
+  "site-acceptance-checklist": {
+    "title": "How to sign off a site from a contractor: 12 checks",
+    "description": "Check these before the final payment so you're not hunting bugs after launch.",
+    "category": "Guide",
+    "tags": ["sign-off", "quality"],
+    "imageAlt": "Lounge",
+    "steps": ["Phone", "Speed", "Forms", "Search"],
+    "content": [
+      { "type": "p", "text": "Half of all problems show up in ten minutes if you know where to look." },
+      { "type": "list", "items": ["open the site on your own phone", "send a test request and see where it lands", "check how fast the first screen loads", "find the site in search by its name", "go through the site using only the keyboard", "turn off the video and see what's left"] }
+    ]
+  }
+}

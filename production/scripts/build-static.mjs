@@ -44,6 +44,19 @@ const visit = (dir) => {
 };
 visit(OUT);
 
+// English pages: <html lang="en"> right in the file (the root layout is shared and says "ru")
+let enPages = 0;
+const enDir = path.join(OUT, "en");
+if (fs.existsSync(enDir)) {
+  for (const f of walkFiles(enDir)) {
+    if (!f.file.endsWith(".html")) continue;
+    const html = fs.readFileSync(f.file, "utf8");
+    const fixed = html.replace('<html lang="ru"', '<html lang="en"');
+    if (fixed !== html) (fs.writeFileSync(f.file, fixed), enPages++);
+  }
+}
+console.log(`english pages: ${enPages}`);
+
 // Apache hosting: own 404 page, correct types, long cache for heavy media (their addresses carry ?v=)
 fs.writeFileSync(
   path.join(OUT, ".htaccess"),

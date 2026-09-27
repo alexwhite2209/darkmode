@@ -4,10 +4,15 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { scroll } from "@/animations/scroll";
 import { site } from "@/data/site";
+import { localHref } from "@/i18n";
+import { useLang } from "@/i18n/client";
+import { dict } from "@/i18n";
 import styles from "./Rail.module.css";
 
 /** Section index on the right edge (desktop): 01 Главная … 06 Связаться, with the active one open. */
 export function Rail() {
+  const lang = useLang();
+  const d = dict[lang];
   const [active, setActive] = useState(0);
   const bar = useRef<HTMLSpanElement>(null);
 
@@ -52,16 +57,16 @@ export function Rail() {
   }, []);
 
   return (
-    <nav className={styles.rail} aria-label="Разделы страницы">
+    <nav className={styles.rail} aria-label={d.sectionsLabel}>
       <span className={styles.track} aria-hidden="true">
         <span ref={bar} className={styles.bar} />
       </span>
       <ol>
         {site.sections.map((n, i) => (
           <li key={n.id} data-active={i === active}>
-            <Link href={n.href} aria-current={i === active ? "true" : undefined}>
+            <Link href={localHref(lang, n.href)} aria-current={i === active ? "true" : undefined}>
               <span className={`${styles.index} t-num`}>{n.index}</span>
-              <span className={styles.label}>{n.label}</span>
+              <span className={styles.label}>{d.sections[n.id as keyof typeof d.sections] ?? n.label}</span>
             </Link>
           </li>
         ))}

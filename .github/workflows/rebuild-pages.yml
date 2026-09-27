@@ -1,11 +1,14 @@
-# Пересборка сайта, когда Dark Mode News Engine добавил новость или статью в src/data/feed.json.
+# Пересборка сайта, когда Dark Mode News Engine добавил публикацию (src/data/feed.json)
+# или что-то поменяли во вкладке «Админ сайта» (проекты, цены, контакты, подписи ролика, картинки проектов).
 # Собирает копию для GitHub Pages (npm run build:pages), кладёт её в корень main и просит Pages обновиться.
 name: Rebuild site after new publications
 
 on:
   push:
     branches: [main]
-    paths: ["src/data/feed.json"]
+    paths:
+      - "src/data/*.json"
+      - "public/images/projects/**"
   workflow_dispatch:
 
 permissions:

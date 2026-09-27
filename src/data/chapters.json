@@ -1,0 +1,74 @@
+[
+  {
+    "id": "portal",
+    "start": 2.9,
+    "end": 5.3,
+    "placement": "bottom-left",
+    "still": "/images/worlds/portal.webp",
+    "ru": { "kind": "3D и WebGL", "title": "Не просто сайт, а путешествие", "text": "3D-сцены прямо в браузере. Гость не листает страницу, он путешествует.", "alt": "Буква O с огненной короной крупным планом" },
+    "en": { "kind": "3D and WebGL", "title": "Not just a website, a journey", "text": "3D scenes right in the browser. Visitors don't scroll a page, they travel.", "alt": "The letter O with a fiery corona, close up" }
+  },
+  {
+    "id": "dino",
+    "start": 5.3,
+    "end": 8.6,
+    "placement": "left",
+    "still": "/images/worlds/dino.webp",
+    "ru": { "kind": "Интерактивные сайты", "title": "Масштаб, который чувствуется", "text": "Большие сцены и анимация по скроллу. Плавно даже на обычном ноутбуке.", "alt": "Гигантский динозавр в фэнтези-долине открывает пасть" },
+    "en": { "kind": "Interactive websites", "title": "Scale you can feel", "text": "Big scenes and scroll-driven motion. Smooth even on an ordinary laptop.", "alt": "A giant dinosaur opens its jaws in a fantasy valley" }
+  },
+  {
+    "id": "drift",
+    "start": 9.1,
+    "end": 12.6,
+    "placement": "bottom-left",
+    "still": "/images/worlds/drift.webp",
+    "ru": { "kind": "Любая тематика", "title": "Разная тематика и дизайн", "text": "Подберём для вас: стиль, сюжет и настроение под ваш бизнес.", "alt": "Спортивная машина в заносе на ночном треке" },
+    "en": { "kind": "Any theme", "title": "Any theme, any design", "text": "We'll find yours: the style, the story and the mood for your business.", "alt": "A sports car drifting on a night track" }
+  },
+  {
+    "id": "product",
+    "start": 14.4,
+    "end": 17.4,
+    "placement": "left",
+    "still": "/images/worlds/watch.webp",
+    "ru": { "kind": "Продуктовые сайты", "title": "Каждая деталь крупно", "text": "Товар снят как в рекламе: блик, материал, механизм. Его хочется взять в руки.", "alt": "Часы в тёмной студии, крупный план циферблата" },
+    "en": { "kind": "Product websites", "title": "Every detail up close", "text": "The product shot like a commercial: the glint, the material, the mechanism. You want to hold it.", "alt": "A watch in a dark studio, the dial close up" }
+  },
+  {
+    "id": "architecture",
+    "start": 17.8,
+    "end": 20.7,
+    "placement": "left",
+    "still": "/images/worlds/facade.webp",
+    "ru": { "kind": "Недвижимость и архитектура", "title": "Дом продаётся до постройки", "text": "Фасады, виды из окон, планировки. Покупатель гуляет по проекту, которого ещё нет.", "alt": "Стеклянный фасад башни ночью, светится одно окно" },
+    "en": { "kind": "Real estate and architecture", "title": "A home sold before it's built", "text": "Facades, window views, floor plans. Buyers walk through a project that doesn't exist yet.", "alt": "A glass tower facade at night with one lit window" }
+  },
+  {
+    "id": "office",
+    "start": 20.9,
+    "end": 23.2,
+    "placement": "bottom-left",
+    "still": "/images/worlds/office.webp",
+    "ru": { "kind": "Корпоративные сайты", "title": "Компания изнутри", "text": "Люди, процессы, масштаб. За минуту понятно, с кем вы работаете.", "alt": "Офис с рядами столов, вдали круглое окно" },
+    "en": { "kind": "Corporate websites", "title": "The company from the inside", "text": "People, processes, scale. In a minute it's clear who you're working with.", "alt": "An office with rows of desks and a round window beyond" }
+  },
+  {
+    "id": "lounge",
+    "start": 23.3,
+    "end": 25.7,
+    "placement": "left",
+    "still": "/images/worlds/lounge.webp",
+    "ru": { "kind": "Отели, рестораны, заведения", "title": "Чувствуешь атмосферу", "text": "Свет, интерьер, настроение места. Гость решает прийти, пока листает.", "alt": "Лаунж в два этажа с баром и круглым окном" },
+    "en": { "kind": "Hotels, restaurants, venues", "title": "Feel the atmosphere", "text": "The light, the interior, the mood of the place. Guests decide to come while they scroll.", "alt": "A two-level lounge with a bar and a round window" }
+  },
+  {
+    "id": "final",
+    "start": 26.6,
+    "end": 30,
+    "placement": "left",
+    "still": "/images/worlds/final.webp",
+    "ru": { "kind": "DARK MODE", "title": "Любой из этих миров может стать вашим сайтом", "text": "Расскажите о задаче. Покажем, как это будет выглядеть, до начала работ.", "alt": "Логотип DARK MODE над ночным городом" },
+    "en": { "kind": "DARK MODE", "title": "Any of these worlds can become your website", "text": "Tell us about your task. We'll show you how it will look before the work begins.", "alt": "The DARK MODE logo over a night city" }
+  }
+]

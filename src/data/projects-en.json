@@ -1,0 +1,86 @@
+{
+  "vorobev-sindikat": {
+    "title": "Vorobyov Syndicate",
+    "category": "Electrical works · landing page",
+    "city": "Nizhny Novgorod",
+    "summary": "Scrolling carries the visitor from an apartment fuse box to a factory floor, with a price guide at every step — the company's scale is clear without a word.",
+    "description": "The hero is one continuous camera flight: an apartment, wiring inside the wall, a private house, an office, a workshop and the city at night from above, with captions and prices changing in sync with the frame. Phones get a dedicated vertical film, so the journey holds up on a small screen. Below: photos from real sites, a cost calculator, client reviews and a free on-site estimate by phone or email.",
+    "highlights": [
+      "\"from apartment to factory\" scroll video",
+      "a dedicated vertical film for phones",
+      "price scales with the size of the job",
+      "cost calculator",
+      "photos from real sites"
+    ]
+  },
+  "autojoker": {
+    "title": "AutoJoker",
+    "category": "Car service · interactive site",
+    "city": "Nizhny Novgorod",
+    "summary": "Instead of a home page, a garage: the visitor opens the door, picks a part of the car and sees exactly what will be repaired.",
+    "description": "The site plays like a garage game: the door opens with a gesture, the car rolls out under the lamps, and seven buttons — engine, suspension, body, electrics, tyres, diagnostics and paint — launch their own breakdown scenes. A gas pedal and tachometer let you rev the engine and send the car out of the yard, while paint mode tries on body colors. Below, over a scroll-driven drift, come services, an award and rating, reviews, vacancies and repair booking.",
+    "highlights": [
+      "a garage instead of a home page",
+      "7 systems, 7 video breakdown scenes",
+      "gas pedal and tachometer",
+      "body color try-on",
+      "scroll-driven drift in the background"
+    ]
+  },
+  "mollstroy": {
+    "title": "Moll Stroy",
+    "category": "Lumber · catalog site",
+    "city": "Nizhny Novgorod",
+    "summary": "A country house on screen comes apart into materials, and every layer leads to a priced catalog — buyers work out the volume themselves and order with one call.",
+    "description": "The header is a film in which the house comes apart layer by layer into block house siding, wind barrier, insulation, boards and beams, with a price card and a catalog link popping up for each layer. The catalog holds 42 products and 199 priced sizes, the calculator covers every material group, and ordering takes one call — no cart, forms or sign-up. On phones, scenes swipe, and \"Catalog\", \"Estimate\" and \"Call\" are always under your thumb.",
+    "highlights": [
+      "the house comes apart into materials on scroll",
+      "42 products and 199 priced sizes",
+      "calculator for every material group",
+      "3D category ring",
+      "order with one call"
+    ]
+  },
+  "alarm-sistem": {
+    "title": "ALARM SISTEM",
+    "category": "Security systems · landing page",
+    "city": "Nizhny Novgorod",
+    "summary": "The visitor pulls the cover off the car, picks the protection and sees the installed price before ever calling.",
+    "description": "The hero works like a showroom reveal: one motion pulls the cloth off the car, uncovering a panel of six services, each with its own short film. Below: a catalog of alarms, immobilizers and parking sensors with equipment and turnkey prices, a labor price list and straight answers to common questions. A starfield drifts beneath the content, responding to scroll and cursor.",
+    "highlights": [
+      "the car cover comes off in one gesture",
+      "six services, six short films",
+      "catalog with equipment and installation prices",
+      "open labor price list",
+      "starfield background reacts to scroll and cursor"
+    ]
+  },
+  "autospec-nn": {
+    "title": "AvtospecNN",
+    "category": "Car service · landing page",
+    "city": "Nizhny Novgorod",
+    "summary": "The car on screen comes apart as you scroll and reassembles by the contacts — clients see a shop that finds the cause instead of swapping parts at random.",
+    "description": "One film runs beneath the entire page: by the middle the car is stripped down to its components, by the end it's whole again, and short lines — \"Understanding the problem\", \"Finding the cause\", \"Done right\" — sit in different corners of the frame. On top: diagnostics, engine, suspension and brake services, a before/after slider and a large phone number at the finale. On phones the page loads fast: a still frame replaces the film.",
+    "highlights": [
+      "the car comes apart and back together on scroll",
+      "captions in the film's \"windows\"",
+      "before/after slider",
+      "lightweight mobile version",
+      "one-tap call"
+    ]
+  },
+  "avtoakademia": {
+    "title": "AvtoAkademia",
+    "category": "Driving school · website",
+    "city": "Nizhny Novgorod",
+    "summary": "Before signing up, a future student rides the whole path — from the first lesson on the training lot to driving in the city — in a scroll-driven film.",
+    "description": "The scroll film runs from the training lot to city streets: no experience, theory, first drive, maneuvers and city practice, each stage with its own caption. License categories come alive in short videos, \"Five steps to your license\" can be driven by holding a button, and prices, installment plans and eight branches on a map sit on one page. Phones get a separate vertical edit, and the school's official accreditation details live on their own page.",
+    "highlights": [
+      "scroll video from training lot to city",
+      "a short video for each license category",
+      "\"Five steps to your license\" route, driven by holding a button",
+      "prices, installments and 8 branches on a map",
+      "vertical edit for phones"
+    ]
+  }
+}

@@ -8,10 +8,12 @@ import { pointer } from "@/animations/pointer";
 import { Spring2 } from "@/animations/spring";
 import { clamp } from "@/lib/math";
 import { SplitWords } from "@/components/SplitWords";
+import { useT } from "@/i18n/client";
 import styles from "./Capabilities.module.css";
 
 /** WHAT WE DO: ten directions; the preview shows the world each one belongs to. */
 export function Capabilities({ items }: { items: Capability[] }) {
+  const tr = useT();
   const [active, setActive] = useState(0);
   const list = useRef<HTMLOListElement>(null);
   const preview = useRef<HTMLDivElement>(null);
@@ -94,10 +96,10 @@ export function Capabilities({ items }: { items: Capability[] }) {
       <div className={`container ${styles.head}`}>
         <p className={styles.num}>03</p>
         <h2 id="services-title" className="t-h2" data-reveal="words">
-          <SplitWords text="Что мы делаем" />
+          <SplitWords text={tr.capsTitle} />
         </h2>
         <p className="t-lead" data-reveal="up">
-          Каждый мир из ролика это отдельный тип сайта. Выберите свой, и мы соберём его под ваш бизнес.
+          {tr.capsLead}
         </p>
       </div>
 
@@ -141,7 +143,7 @@ export function Capabilities({ items }: { items: Capability[] }) {
               </button>
               <div className={styles.rowBody}>
                 <p>{c.lead}</p>
-                <ul className={styles.examples} aria-label="Например">
+                <ul className={styles.examples} aria-label={tr.examplesLabel}>
                   {c.examples.map((e) => (
                     <li key={e}>{e}</li>
                   ))}

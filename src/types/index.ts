@@ -103,6 +103,7 @@ export type SiteConfig = {
     telegram: { label: string; href: string };
     city: string;
   };
+  cityByLang: { ru: string; en: string };
   nav: NavItem[];
   sections: NavItem[];
   video: {

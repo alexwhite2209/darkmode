@@ -8,6 +8,7 @@ import { pointer } from "@/animations/pointer";
 import { Spring2 } from "@/animations/spring";
 import { clamp, smoothstep } from "@/lib/math";
 import { SplitWords } from "@/components/SplitWords";
+import { useT } from "@/i18n/client";
 import styles from "./Projects.module.css";
 
 /**
@@ -16,6 +17,7 @@ import styles from "./Projects.module.css";
  * the story reveals beside it, then the screen is cropped away as the next one arrives.
  */
 function ProjectStage({ p, i, total }: { p: Project; i: number; total: number }) {
+  const tr = useT();
   const wrap = useRef<HTMLElement>(null);
   const screen = useRef<HTMLDivElement>(null);
   const tilt = useRef<HTMLDivElement>(null);
@@ -124,8 +126,8 @@ function ProjectStage({ p, i, total }: { p: Project; i: number; total: number })
           </p>
           {p.price ? (
             <p className={styles.price}>
-              <span className={styles.priceLabel}>Цена</span>
-              <span className={styles.priceValue}>{p.price.toLocaleString("ru-RU")} ₽</span>
+              <span className={styles.priceLabel}>{tr.price}</span>
+              <span className={styles.priceValue}>{p.price.toLocaleString(tr.dateLocale)} ₽</span>
             </p>
           ) : null}
           <p className={styles.summary}>{p.summary}</p>
@@ -137,7 +139,7 @@ function ProjectStage({ p, i, total }: { p: Project; i: number; total: number })
             </ul>
           )}
           {p.stack.length > 0 && (
-            <ul className={styles.stack} aria-label="Технологии">
+            <ul className={styles.stack} aria-label={tr.tech}>
               {p.stack.map((s) => (
                 <li key={s}>{s}</li>
               ))}
@@ -145,10 +147,10 @@ function ProjectStage({ p, i, total }: { p: Project; i: number; total: number })
           )}
           {p.liveUrl ? (
             <a className={styles.link} href={p.liveUrl} target="_blank" rel="noopener">
-              Открыть сайт
+              {tr.openSite}
             </a>
           ) : (
-            <p className={styles.note}>Ссылка на сайт по запросу</p>
+            <p className={styles.note}>{tr.linkOnRequest}</p>
           )}
         </div>
 
@@ -157,7 +159,7 @@ function ProjectStage({ p, i, total }: { p: Project; i: number; total: number })
             <div ref={tilt} className={styles.tilt}>
               <Wrapper
                 className={styles.browser}
-                {...(p.liveUrl ? { href: p.liveUrl, target: "_blank", rel: "noopener", "data-cursor": "Открыть" } : { "data-cursor": "Смотреть" })}
+                {...(p.liveUrl ? { href: p.liveUrl, target: "_blank", rel: "noopener", "data-cursor": tr.cursorOpen } : { "data-cursor": tr.cursorView })}
               >
                 <span className={styles.chrome} aria-hidden="true">
                   <i />
@@ -183,19 +185,20 @@ function ProjectStage({ p, i, total }: { p: Project; i: number; total: number })
 }
 
 export function Projects({ projects }: { projects: Project[] }) {
+  const tr = useT();
   return (
     <section id="projects" className={styles.section} aria-labelledby="projects-title">
       <div className={`container ${styles.head}`}>
         <p className={styles.eyebrowNum}>02</p>
         <h2 id="projects-title" className="t-h2" data-reveal="words">
-          <SplitWords text="Проекты" />
+          <SplitWords text={tr.projectsTitle} />
         </h2>
         <p className="t-lead" data-reveal="up">
-          Сайты, которые мы собрали для бизнеса: электромонтаж, автосервисы, охрана, стройматериалы, автошкола. У каждого свой мир и свой сценарий.
+          {tr.projectsLead}
         </p>
       </div>
       {projects.length === 0 ? (
-        <p className="container t-small">Проекты скоро появятся здесь.</p>
+        <p className="container t-small">{tr.projectsEmpty}</p>
       ) : (
         projects.map((p, i) => <ProjectStage key={p.slug} p={p} i={i} total={projects.length} />)
       )}

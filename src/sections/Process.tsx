@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { ProcessStep } from "@/types";
 import { scroll, ranges } from "@/animations/scroll";
 import { SplitWords } from "@/components/SplitWords";
+import { useT } from "@/i18n/client";
 import styles from "./Process.module.css";
 
 const R = 44;
@@ -11,6 +12,7 @@ const C = 2 * Math.PI * R;
 
 /** IDEA -> SYSTEM -> DESIGN -> DEVELOPMENT -> LAUNCH. The O fills as the steps go by. */
 export function Process({ steps }: { steps: ProcessStep[] }) {
+  const tr = useT();
   const section = useRef<HTMLElement>(null);
   const arc = useRef<SVGCircleElement>(null);
   const line = useRef<HTMLSpanElement>(null);
@@ -53,7 +55,7 @@ export function Process({ steps }: { steps: ProcessStep[] }) {
           <div className={styles.head}>
             <p className={styles.num}>04</p>
             <h2 id="process-title" className="t-h2" data-reveal="words">
-              <SplitWords text="Как мы работаем" />
+              <SplitWords text={tr.processTitle} />
             </h2>
           </div>
 

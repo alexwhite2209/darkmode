@@ -4,31 +4,24 @@ import Link from "next/link";
 import { useId, useMemo, useRef, useState, type KeyboardEvent } from "react";
 import type { MediaKind, Publication } from "@/types";
 import { SplitWords } from "@/components/SplitWords";
-import { mediaKindPath, publicationHref } from "@/lib/media-paths";
+import { publicationHref } from "@/lib/media-paths";
+import { kindHref } from "@/lib/media-paths";
+import { useLang } from "@/i18n/client";
+import { dict, formatDate } from "@/i18n";
 import styles from "./Media.module.css";
 
-const TABS: { id: "all" | MediaKind; label: string }[] = [
-  { id: "all", label: "Всё" },
-  { id: "news", label: "Новости" },
-  { id: "article", label: "Статьи" },
-  { id: "guide", label: "Гайды" },
-];
-const KIND: Record<MediaKind, string> = { news: "Новость", article: "Статья", guide: "Гайд" };
-const PAGES: { kind: MediaKind; label: string }[] = [
-  { kind: "news", label: "Все новости" },
-  { kind: "article", label: "Все статьи" },
-  { kind: "guide", label: "Все гайды" },
-];
-
-export const formatDate = (iso: string) =>
-  new Date(iso + "T12:00:00").toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" });
-
+const TAB_IDS: ("all" | MediaKind)[] = ["all", "news", "article", "guide"];
+const PAGE_KINDS: MediaKind[] = ["news", "article", "guide"];
 /**
  * News, articles, guides. On the home page: a mixed feed with tabs and links to the three pages.
  * On /news, /articles, /guides: one kind only (`kind`), no tabs.
  */
 export function Media({ items, kind }: { items: Publication[]; kind?: MediaKind }) {
-  const [tab, setTab] = useState<(typeof TABS)[number]["id"]>("all");
+  const lang = useLang();
+  const tr = dict[lang];
+  const TABS = TAB_IDS.map((id) => ({ id, label: id === "all" ? tr.tabAll : tr.kindMany[id] }));
+  const PAGES = PAGE_KINDS.map((k) => ({ kind: k, label: k === "news" ? tr.allNews : k === "article" ? tr.allArticles : tr.allGuides }));
+  const [tab, setTab] = useState<(typeof TAB_IDS)[number]>("all");
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const uid = useId();
   const home = !kind;
@@ -51,29 +44,29 @@ export function Media({ items, kind }: { items: Publication[]; kind?: MediaKind 
   const body = (
     <>
       {feature && (
-        <Link href={publicationHref(feature)} className={styles.feature} data-cursor="Читать" key={`f-${feature.slug}`}>
+        <Link href={publicationHref(feature, lang)} className={styles.feature} data-cursor={tr.read} key={`f-${feature.slug}`}>
           <div className={styles.featureImg}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={feature.image.src} alt={feature.image.alt} loading="lazy" decoding="async" width={1280} height={720} />
           </div>
           <div className={styles.featureText}>
             <p className={styles.meta}>
-              <span className={styles.kind}>{KIND[feature.kind]}</span>
-              <time dateTime={feature.publishedAt}>{formatDate(feature.publishedAt)}</time>
+              <span className={styles.kind}>{tr.kindOne[feature.kind]}</span>
+              <time dateTime={feature.publishedAt}>{formatDate(feature.publishedAt, lang)}</time>
             </p>
             <h3 className={styles.featureTitle}>{feature.title}</h3>
             <p className={styles.desc}>{feature.description}</p>
-            <span className={styles.more}>Читать, {feature.readingMinutes} мин</span>
+            <span className={styles.more}>{tr.readMin(feature.readingMinutes)}</span>
           </div>
         </Link>
       )}
       <ul className={styles.list}>
         {rest.map((p) => (
           <li key={p.slug}>
-            <Link href={publicationHref(p)} className={styles.item}>
+            <Link href={publicationHref(p, lang)} className={styles.item}>
               <p className={styles.meta}>
-                <span className={styles.kind}>{KIND[p.kind]}</span>
-                <time dateTime={p.publishedAt}>{formatDate(p.publishedAt)}</time>
+                <span className={styles.kind}>{tr.kindOne[p.kind]}</span>
+                <time dateTime={p.publishedAt}>{formatDate(p.publishedAt, lang)}</time>
               </p>
               <h3 className={styles.itemTitle}>{p.title}</h3>
               <p className={styles.itemDesc}>{p.description}</p>
@@ -86,7 +79,7 @@ export function Media({ items, kind }: { items: Publication[]; kind?: MediaKind 
 
   if (!home) {
     return (
-      <section className={styles.section} aria-label="Публикации">
+      <section className={styles.section} aria-label={tr.publications}>
         <div className="container">
           <div className={styles.panel}>{body}</div>
         </div>
@@ -100,21 +93,21 @@ export function Media({ items, kind }: { items: Publication[]; kind?: MediaKind 
         <div className={styles.head}>
           <p className={styles.num}>05</p>
           <h2 id="media-title" className="t-h2" data-reveal="words">
-            <SplitWords text="Новости, статьи, гайды" />
+            <SplitWords text={tr.mediaTitle} />
           </h2>
           <p className="t-lead" data-reveal="up">
-            Новости студии, статьи о том, как сайты продают, и гайды, которые экономят время на старте.
+            {tr.mediaLead}
           </p>
           <ul className={styles.pages} data-reveal="up">
             {PAGES.map((pg) => (
               <li key={pg.kind}>
-                <Link href={`/${mediaKindPath[pg.kind]}`}>{pg.label}</Link>
+                <Link href={kindHref(pg.kind, lang)}>{pg.label}</Link>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className={styles.tabs} role="tablist" aria-label="Тип публикаций" onKeyDown={onKey}>
+        <div className={styles.tabs} role="tablist" aria-label={tr.tabsLabel} onKeyDown={onKey}>
           {TABS.map((t, i) => (
             <button
               key={t.id}

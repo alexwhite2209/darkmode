@@ -3,10 +3,12 @@
 import { useEffect, useRef } from "react";
 import { scroll, ranges } from "@/animations/scroll";
 import { smoothstep } from "@/lib/math";
+import { useT } from "@/i18n/client";
 import styles from "./Contact.module.css";
 
 /** Final phrase before the way back out of the O. The three lines converge as the section arrives. */
 export function Contact() {
+  const tr = useT();
   const section = useRef<HTMLElement>(null);
   const words = useRef<HTMLHeadingElement>(null);
 
@@ -26,9 +28,9 @@ export function Contact() {
       <div className={`container ${styles.inner}`}>
         <p className={styles.num}>06</p>
         <h2 id="contact-title" ref={words} className={`t-display ${styles.title}`} style={{ "--k": 0 } as React.CSSProperties}>
-          <span className={styles.l1}>Создаём</span>
-          <span className={styles.l2}>эволюцию</span>
-          <span className={styles.l3}>сайтов.</span>
+          <span className={styles.l1}>{tr.finalPhrase[0]}</span>
+          <span className={styles.l2}>{tr.finalPhrase[1]}</span>
+          <span className={styles.l3}>{tr.finalPhrase[2]}</span>
         </h2>
       </div>
     </section>

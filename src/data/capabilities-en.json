@@ -1,0 +1,62 @@
+{
+  "corporate": {
+    "title": "Corporate websites",
+    "lead": "A site that explains your company in a minute: who you are, what you do, why people trust you.",
+    "examples": ["manufacturing", "B2B", "holdings"],
+    "imageAlt": "Office space, view along rows of desks"
+  },
+  "product": {
+    "title": "Product websites",
+    "lead": "The product up close, in motion and in detail. The page sells like a great shop window.",
+    "examples": ["gadgets", "watches", "cosmetics"],
+    "imageAlt": "A watch in a beam of light in a dark studio"
+  },
+  "automotive": {
+    "title": "Automotive websites",
+    "lead": "Speed, sound and detail on screen. Service bookings and test-drive requests.",
+    "examples": ["dealers", "tuning", "car services"],
+    "imageAlt": "A car drifting on a night track"
+  },
+  "real-estate": {
+    "title": "Real estate",
+    "lead": "A house or residential complex you can walk through: facades, floor plans, the view from the window.",
+    "examples": ["residential complexes", "cottages", "developers"],
+    "imageAlt": "Glass tower facade with a lit window"
+  },
+  "architecture": {
+    "title": "Architecture",
+    "lead": "A studio portfolio where the camera flies around the building instead of a gallery flipping through it.",
+    "examples": ["studios", "interior design", "landscape"],
+    "imageAlt": "Camera flight between towers of a night city"
+  },
+  "hospitality": {
+    "title": "Hotels and restaurants",
+    "lead": "The atmosphere, the menu and booking in a couple of taps. Guests choose you before they arrive.",
+    "examples": ["hotels", "restaurants", "bars and lounges"],
+    "imageAlt": "A lounge with a bar and a round window"
+  },
+  "ecommerce": {
+    "title": "Online stores",
+    "lead": "Catalog, cart and checkout that don't lose the buyer on the way to the order.",
+    "examples": ["catalogs", "brands", "marketplace storefronts"],
+    "imageAlt": "Macro: watch crown and case"
+  },
+  "landing": {
+    "title": "Landing pages",
+    "lead": "One page, one offer, a request with no extra steps. Launched in weeks.",
+    "examples": ["promotions", "launches", "services"],
+    "imageAlt": "DARK MODE logo and an eclipse over wet stone"
+  },
+  "interactive": {
+    "title": "Interactive websites",
+    "lead": "Scroll video, animation, mini-games and calculators. A site people want to play with.",
+    "examples": ["special projects", "promo", "events"],
+    "imageAlt": "A dinosaur opening its jaws in a fantasy valley"
+  },
+  "webgl": {
+    "title": "3D and WebGL",
+    "lead": "Models and entire scenes right in the browser, with no plugins and no long loading.",
+    "examples": ["configurators", "3D showcases", "presentations"],
+    "imageAlt": "A tunnel of glowing rings"
+  }
+}

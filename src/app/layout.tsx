@@ -10,6 +10,7 @@ import { Preloader } from "@/components/Preloader";
 import { Cursor } from "@/components/Cursor";
 import { Environment } from "@/components/Environment";
 import { Ambient } from "@/components/Ambient";
+import { SkipLink } from "@/components/SkipLink";
 
 const title = "DARK MODE | Сайты, которые запоминают";
 
@@ -51,9 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <style dangerouslySetInnerHTML={{ __html: fontFaces }} />
       </head>
       <body>
-        <a className="skip-link" href="#main">
-          Перейти к содержимому
-        </a>
+        <SkipLink />
         <MotionProvider>
           <Environment />
           <Ambient />

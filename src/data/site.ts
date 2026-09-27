@@ -5,7 +5,10 @@ import { asset } from "@/lib/asset";
  * Global site settings: contacts, menu, video paths. Change them here and they update everywhere
  * (header, buttons, finale, SEO, sitemap). The domain comes from NEXT_PUBLIC_SITE_URL.
  */
-const PHONE = "+79101459965";
+// phone, Telegram and city live in contacts.json (edited from the admin tab of News Engine)
+import contacts from "./contacts.json";
+
+const PHONE = contacts.phone;
 const MEDIA_VERSION = 5;
 
 export const site: SiteConfig = {
@@ -16,11 +19,12 @@ export const site: SiteConfig = {
     "DARK MODE делает только сайты: скролл-видео, 3D и анимация, которые запоминают. Корпоративные, продуктовые, авто, недвижимость, отели и рестораны.",
   locale: "ru_RU",
   contacts: {
-    phone: { label: "+7 910 145-99-65", href: `tel:${PHONE}` },
+    phone: { label: contacts.phoneLabel, href: `tel:${PHONE}` },
     sms: { label: "Написать", href: `sms:${PHONE}` },
-    telegram: { label: "Telegram", href: "https://t.me/alexxxwhite007" },
-    city: "Нижний Новгород, работаем по всей России",
+    telegram: { label: "Telegram", href: contacts.telegram },
+    city: contacts.city.ru,
   },
+  cityByLang: contacts.city,
   /** header menu: sections of the home page and the separate publication pages */
   nav: [
     { id: "projects", label: "Проекты", href: "/#projects", index: "02" },

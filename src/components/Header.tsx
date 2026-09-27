@@ -5,16 +5,20 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import { DiscussButton, onCallClick } from "./Buttons";
+import { LangSwitch } from "./LangSwitch";
 import { scroll } from "@/animations/scroll";
 import { site } from "@/data/site";
+import { dict, langFromPath, localHref } from "@/i18n";
 import styles from "./Header.module.css";
 
 export function Header() {
   const ref = useRef<HTMLElement>(null);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const home = pathname === "/";
-  const links = site.nav;
+  const lang = langFromPath(pathname);
+  const d = dict[lang];
+  const home = pathname === "/" || pathname === "/en";
+  const links = site.nav.map((n) => ({ ...n, label: d.nav[n.id as keyof typeof d.nav] ?? n.label, href: localHref(lang, n.href) }));
 
   // glass after leaving the very top; hide while scrolling down, show on the way up
   useEffect(() => {
@@ -57,10 +61,10 @@ export function Header() {
   return (
     <header ref={ref} className={styles.header} data-open={open}>
       <div className={styles.bar}>
-        <Link href={home ? "/#top" : "/"} className={styles.logo} aria-label="DARK MODE, на главную">
+        <Link href={home ? localHref(lang, "/#top") : localHref(lang, "/")} className={styles.logo} aria-label={d.toHome}>
           <Logo idPrefix="hdr" />
         </Link>
-        <nav className={styles.nav} aria-label="Основная навигация">
+        <nav className={styles.nav} aria-label={d.mainNav}>
           <ul>
             {links.map((l) => (
               <li key={l.id}>
@@ -71,6 +75,7 @@ export function Header() {
             ))}
           </ul>
         </nav>
+        <LangSwitch className={styles.lang} />
         <div className={styles.cta}>
           <DiscussButton />
         </div>
@@ -79,7 +84,7 @@ export function Header() {
           className={styles.burger}
           aria-expanded={open}
           aria-controls="mobile-menu"
-          aria-label={open ? "Закрыть меню" : "Открыть меню"}
+          aria-label={open ? d.closeMenu : d.openMenu}
           onClick={() => setOpen((v) => !v)}
         >
           <span />
@@ -88,9 +93,9 @@ export function Header() {
       </div>
 
       <div id="mobile-menu" className={styles.menu} hidden={!open}>
-        <nav aria-label="Меню">
+        <nav aria-label={d.menu}>
           <ol>
-            {site.nav.map((l) => (
+            {links.map((l) => (
               <li key={l.id}>
                 <Link href={l.href} onClick={() => setOpen(false)}>
                   <span className={styles.menuIndex}>{l.index}</span>
@@ -108,7 +113,7 @@ export function Header() {
             onCallClick(e);
           }}
         >
-          Обсудить проект
+          {d.discuss}
         </a>
         <p className={styles.menuContacts}>
           <a href={site.contacts.phone.href}>{site.contacts.phone.label}</a>

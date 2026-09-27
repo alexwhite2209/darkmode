@@ -8,6 +8,8 @@ import { smoothstep } from "@/lib/math";
 import { ambient } from "@/lib/store";
 import { PhoneIcon } from "@/components/Buttons";
 import { Magnetic } from "@/components/Magnetic";
+import { useLang } from "@/i18n/client";
+import { dict } from "@/i18n";
 import styles from "./Finale.module.css";
 
 /**
@@ -19,6 +21,8 @@ import styles from "./Finale.module.css";
 const OUTRO_SECONDS = 2.8;
 
 export function Finale() {
+  const lang = useLang();
+  const tr = dict[lang];
   const section = useRef<HTMLElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
   const cover = useRef<HTMLDivElement>(null);
@@ -107,12 +111,12 @@ export function Finale() {
 
         <div ref={actions} className={styles.actions} style={{ "--k": mode === "static" ? 1 : 0 } as React.CSSProperties}>
           <h2 id="finale-title" className={styles.title}>
-            Позвоните или напишите
+            {tr.callOrWrite}
           </h2>
           <div className={styles.buttons}>
             <Magnetic>
               <a className="btn btn--primary" href={site.contacts.phone.href}>
-                <span>Позвонить {site.contacts.phone.label}</span>
+                <span>{tr.call} {site.contacts.phone.label}</span>
                 <span className="btn__icon" aria-hidden="true">
                   <PhoneIcon />
                 </span>
@@ -120,17 +124,17 @@ export function Finale() {
             </Magnetic>
             <Magnetic strength={0.22}>
               <a className="btn" href={site.contacts.sms.href}>
-                <span>Написать</span>
+                <span>{tr.write}</span>
               </a>
             </Magnetic>
             <Magnetic strength={0.22}>
               <a className="btn" href={site.contacts.telegram.href} target="_blank" rel="noopener">
-                <span>Написать в Telegram</span>
+                <span>{tr.writeTelegram}</span>
               </a>
             </Magnetic>
           </div>
           <p className={styles.legal}>
-            © {new Date().getFullYear()} DARK MODE. {site.contacts.city}.
+            © {new Date().getFullYear()} DARK MODE. {site.cityByLang[lang]}.
           </p>
         </div>
       </div>

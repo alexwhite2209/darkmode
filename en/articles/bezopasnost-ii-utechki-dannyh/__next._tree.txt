@@ -1,0 +1,7 @@
+:HL["/darkmode/_next/static/chunks/1ty92tspymcfa.css","style"]
+:HL["/darkmode/_next/static/chunks/2978zmph_n99r.css","style"]
+:HL["/darkmode/fonts/science-gothic-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/darkmode/fonts/geist-cyrillic.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/darkmode/fonts/science-gothic-latin.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["https://akm-img-a-in.tosshub.com/indiatoday/images/story/202609/the-string-of-loss-of-control-incidents-has-injected-intense-momentum-into-global-demands-for-strict-262021684-16x9.jpg?VersionId=XOevpbXW_E0C.H_kF0wlwL8q2VMCTp4X","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"en","param":null,"prefetchHints":4192,"slots":{"children":{"name":"kind","param":{"type":"d","key":"articles","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"bezopasnost-ii-utechki-dannyh","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}},"staleTime":300,"buildId":"IxQympbeOJVRcRYWWyOzV"}

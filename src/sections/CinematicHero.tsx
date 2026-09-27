@@ -9,6 +9,8 @@ import { band, clamp, smoothstep } from "@/lib/math";
 import { ambient, loading } from "@/lib/store";
 import { SplitWords } from "@/components/SplitWords";
 import { DiscussButton, LinkButton } from "@/components/Buttons";
+import { useLang, useT } from "@/i18n/client";
+import { dict, localHref } from "@/i18n";
 import styles from "./CinematicHero.module.css";
 
 const DURATION = site.video.duration;
@@ -19,6 +21,7 @@ type Mode = "video" | "static";
 
 /** Thin bar at the top of the film: how much of the film is loaded. Shown after the preloader, fades at 100%. */
 function FilmBar() {
+  const tr = useT();
   const bar = useRef<HTMLDivElement>(null);
   const fill = useRef<HTMLSpanElement>(null);
   const label = useRef<HTMLSpanElement>(null);
@@ -29,14 +32,14 @@ function FilmBar() {
       if (f === last && !s.done) return;
       last = f;
       fill.current!.style.transform = `scaleX(${s.film.toFixed(3)})`;
-      label.current!.textContent = `Загрузка ролика ${f}%`;
+      label.current!.textContent = `${tr.filmLoading} ${f}%`;
       bar.current!.dataset.state = !s.done ? "wait" : f >= 100 ? "done" : "on";
     };
     update(loading.get());
     return loading.subscribe(update);
   }, []);
   return (
-    <div ref={bar} className={styles.filmBar} data-state="wait" role="progressbar" aria-label="Загрузка ролика">
+    <div ref={bar} className={styles.filmBar} data-state="wait" role="progressbar" aria-label={tr.filmLoading}>
       <span ref={fill} className={styles.filmFill} />
       <span ref={label} className={styles.filmLabel} />
     </div>
@@ -44,6 +47,8 @@ function FilmBar() {
 }
 
 export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
+  const lang = useLang();
+  const tr = dict[lang];
   const section = useRef<HTMLElement>(null);
   const stage = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
@@ -233,7 +238,7 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
       className={styles.hero}
       data-mode={mode}
       data-ready={ready}
-      aria-label="DARK MODE: путешествие по мирам сайтов"
+      aria-label={tr.heroAria}
     >
       <div ref={stage} className={styles.stage} data-video="idle">
         <div className={styles.media} aria-hidden="true">
@@ -260,12 +265,12 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
         <div ref={intro} className={styles.intro}>
           <p className={styles.tagline}>{site.tagline}</p>
           <h1 className={`t-h1 ${styles.h1}`}>
-            <SplitWords text="Мы делаем эволюцию сайтов" />
+            <SplitWords text={tr.heroTitle} />
           </h1>
           <div className={styles.actions}>
             <DiscussButton />
-            <LinkButton href="/#projects" icon="play">
-              Смотреть проекты
+            <LinkButton href={localHref(lang, "/#projects")} icon="play">
+              {tr.watchProjects}
             </LinkButton>
           </div>
         </div>
@@ -296,7 +301,7 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
               {c.id === "final" && (
                 <div className={styles.finalActions}>
                   <DiscussButton />
-                  <LinkButton href="/#projects">Смотреть проекты</LinkButton>
+                  <LinkButton href={localHref(lang, "/#projects")}>{tr.watchProjects}</LinkButton>
                 </div>
               )}
             </div>
@@ -315,8 +320,8 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
         </div>
 
         <div ref={cue} className={styles.cue}>
-          <span>Листайте вниз</span>
-          <button type="button" className={styles.cueBtn} onClick={() => scroll.scrollTo(window.scrollY + window.innerHeight * 1.2)} aria-label="Прокрутить вниз">
+          <span>{tr.scrollDown}</span>
+          <button type="button" className={styles.cueBtn} onClick={() => scroll.scrollTo(window.scrollY + window.innerHeight * 1.2)} aria-label={tr.scrollDownAria}>
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M8 3v10M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -325,7 +330,7 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
 
         {mode === "video" && (
           <button type="button" className={styles.skip} onClick={skip}>
-            Пропустить ролик
+            {tr.skipFilm}
           </button>
         )}
 
@@ -335,7 +340,7 @@ export function CinematicHero({ chapters }: { chapters: Chapter[] }) {
       {/* reduced motion: the journey as still frames */}
       {mode === "static" && (
         <div className={`container ${styles.worlds}`}>
-          <h2 className="t-h3">Семь миров, семь типов сайтов</h2>
+          <h2 className="t-h3">{tr.worldsTitle}</h2>
           <ol className={styles.worldList}>
             {chapters.map((c) => (
               <li key={c.id}>
