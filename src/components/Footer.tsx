@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import { site } from "@/data/site";
-import { dict, langFromPath, localHref } from "@/i18n";
+import { dict, langFromPath, localHref, isHomePath } from "@/i18n";
 import styles from "./Footer.module.css";
 
 /** Inner pages only: the home page ends on the big logo of the finale. */
@@ -12,7 +12,7 @@ export function Footer() {
   const pathname = usePathname();
   const lang = langFromPath(pathname);
   const d = dict[lang];
-  if (pathname === "/" || pathname === "/en") return null;
+  if (isHomePath(pathname)) return null;
   const year = new Date().getFullYear();
   return (
     <footer className={styles.footer}>

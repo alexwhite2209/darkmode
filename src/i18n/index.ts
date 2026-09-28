@@ -17,8 +17,15 @@ export function localHref(lang: Lang, href: string) {
 /** language from a path WITHOUT the base path (usePathname already strips it) */
 export const langFromPath = (pathname: string | null | undefined): Lang => (pathname === "/en" || pathname?.startsWith("/en/") ? "en" : "ru");
 
+/** the home page in either language; static hosting adds a trailing slash ("/en/") */
+export const isHomePath = (pathname: string | null | undefined) => {
+  const p = (pathname || "/").replace(/\/+$/, "") || "/";
+  return p === "/" || p === "/en";
+};
+
 /** the same page in the other language */
 export function switchHref(pathname: string, to: Lang) {
+  pathname = pathname.replace(/(.)\/+$/, "$1");
   const ru = pathname === "/en" ? "/" : pathname.startsWith("/en/") ? pathname.slice(3) : pathname;
   return localHref(to, ru);
 }

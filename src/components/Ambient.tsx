@@ -1,5 +1,6 @@
 "use client";
 
+import { isHomePath } from "@/i18n";
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { site } from "@/data/site";
@@ -16,7 +17,7 @@ const MAX_OPACITY = 0.42;
 export function Ambient() {
   const pathname = usePathname();
   const video = useRef<HTMLVideoElement>(null);
-  const home = pathname === "/";
+  const home = isHomePath(pathname);
 
   useEffect(() => {
     const v = video.current;

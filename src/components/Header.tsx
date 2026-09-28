@@ -8,7 +8,7 @@ import { DiscussButton, onCallClick } from "./Buttons";
 import { LangSwitch } from "./LangSwitch";
 import { scroll } from "@/animations/scroll";
 import { site } from "@/data/site";
-import { dict, langFromPath, localHref } from "@/i18n";
+import { dict, langFromPath, localHref, isHomePath } from "@/i18n";
 import styles from "./Header.module.css";
 
 export function Header() {
@@ -17,7 +17,7 @@ export function Header() {
   const pathname = usePathname();
   const lang = langFromPath(pathname);
   const d = dict[lang];
-  const home = pathname === "/" || pathname === "/en";
+  const home = isHomePath(pathname);
   const links = site.nav.map((n) => ({ ...n, label: d.nav[n.id as keyof typeof d.nav] ?? n.label, href: localHref(lang, n.href) }));
 
   // glass after leaving the very top; hide while scrolling down, show on the way up
